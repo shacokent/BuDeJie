@@ -1,0 +1,6 @@
+framework module Pods_BuDeJie {
+  umbrella header "Pods-BuDeJie-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,65 @@
+//
+//  BuDeJie.pch
+//  BuDeJie
+//
+//  Created by hongchen li on 2022/2/18.
+//  Copyright © 2022 shacokent. All rights reserved.
+//
+/**
+ 1.存放公共的宏
+ 2.存放公共的头文件
+ 3.自定义LOG
+ */
+#ifndef BuDeJie_pch
+#define BuDeJie_pch
+
+#ifdef __OBJC__ //只有OC文件才导入
+
+//补充宏的用法
+//#代表把他后面的标识符加一对“”，例如 @#file == @"file"
+//##代表连接，例如 如果file传的值时123， abc##file == abc123
+
+#pragma mark - ***********屏幕适配***********************
+#define SKSCreenW [UIScreen mainScreen].bounds.size.width
+#define SKSCreenH [UIScreen mainScreen].bounds.size.height
+#define iphone6p (SKSCreenH == 736)
+#define iphone6 (SKSCreenH == 667)
+#define iphone5 (SKSCreenH == 568)
+#define iphone4 (SKSCreenH == 480)
+#define iphone13 (SKSCreenH == 844)
+//是否是刘海幕
+#define SKHaveBangs (SKSCreenH == 812.0f || SKSCreenH == 896.0f || SKSCreenH == 844.0f || SKSCreenH == 926.0f)
+#define SKAdaptNaviHeight      24 //状态栏高度
+#define SKAdaptTabHeight       (SKHaveBangs ? 34 : 0) //Tab bar 圆角部分高度
+#define SKNAVIHeight           (SKHaveBangs ? 88 : 64) //导航
+#define SKTABBARHeight       (SKHaveBangs ? 83 : 49) // 分栏
+
+#pragma mark - ***********设置颜色***********************
+#define SKColor(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+//随机数
+#define SKRandomNum(n) arc4random_uniform(n)
+//随机色
+#define SKRandomColor SKColor(SKRandomNum(255),SKRandomNum(255),SKRandomNum(255),1)
+
+#pragma mark - ******************公共头文件***************
+#import "SKConst.h"
+#import "UIImage+SK.h"
+#import "UIView+SKFrame.h"
+#import "UIBarButtonItem+SKBarButtonItem.h"
+#import "UIWindow+SK.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import "UITextField+SKPlaceHolder.h"
+#import "UIImageView+SK.h"
+#import "SKAlert.h"
+#define SKKeyWindow [UIWindow getKeyWindow]
+
+#pragma mark - ******************LOG***************
+#ifdef DEBUG//调试阶段
+    #define SKLog(...) NSLog(__VA_ARGS__)//自定义LOG
+    #define SKFunc NSLog(@"%s",__func__);
+#else//发布环境
+    #define SKLog(...)
+#endif
+
+#endif
+#endif /* BuDeJie_pch */

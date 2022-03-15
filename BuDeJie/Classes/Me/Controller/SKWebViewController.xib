@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SKWebViewController">
+            <connections>
+                <outlet property="backBtnItem" destination="mXI-cE-jFt" id="tfB-RB-P47"/>
+                <outlet property="contentView" destination="O5A-aJ-7kd" id="Qg3-v2-4qF"/>
+                <outlet property="forwardBtnItem" destination="Luz-6I-6Pe" id="sLB-vd-KPa"/>
+                <outlet property="progressView" destination="juc-Q2-SXV" id="jr3-FO-QYO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="juc-Q2-SXV">
+                    <rect key="frame" x="0.0" y="88" width="414" height="4"/>
+                </progressView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C57-2c-hoX">
+                    <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                    <items>
+                        <barButtonItem enabled="NO" title="Item" image="chevron.left" catalog="system" id="mXI-cE-jFt">
+                            <connections>
+                                <action selector="goBack:" destination="-1" id="NQB-AA-dxR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem enabled="NO" title="Item" image="chevron.right" catalog="system" id="Luz-6I-6Pe">
+                            <connections>
+                                <action selector="goForward:" destination="-1" id="Xfq-7e-aoS"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="q7E-Ot-Ax8"/>
+                        <barButtonItem systemItem="refresh" id="Whp-lx-QlI">
+                            <connections>
+                                <action selector="reLoadView:" destination="-1" id="xqx-MC-8cP"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5A-aJ-7kd" userLabel="contentView">
+                    <rect key="frame" x="0.0" y="92" width="414" height="755"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="juc-Q2-SXV" secondAttribute="trailing" id="0Xx-C0-Yyl"/>
+                <constraint firstItem="juc-Q2-SXV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="88" id="3mk-24-sQx"/>
+                <constraint firstAttribute="trailing" secondItem="C57-2c-hoX" secondAttribute="trailing" id="Ejw-Mx-MAW"/>
+                <constraint firstAttribute="trailing" secondItem="O5A-aJ-7kd" secondAttribute="trailing" id="Jkp-8m-WhA"/>
+                <constraint firstItem="O5A-aJ-7kd" firstAttribute="top" secondItem="juc-Q2-SXV" secondAttribute="bottom" id="LsM-SB-zwb"/>
+                <constraint firstItem="juc-Q2-SXV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MSL-C7-96u"/>
+                <constraint firstItem="O5A-aJ-7kd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Zd0-Iu-4Ts"/>
+                <constraint firstItem="C57-2c-hoX" firstAttribute="top" secondItem="O5A-aJ-7kd" secondAttribute="bottom" id="f2g-Cs-6sM"/>
+                <constraint firstAttribute="bottom" secondItem="C57-2c-hoX" secondAttribute="bottom" id="gnM-Ay-HFv"/>
+                <constraint firstItem="C57-2c-hoX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="n4w-GN-pU4"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="84.375"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

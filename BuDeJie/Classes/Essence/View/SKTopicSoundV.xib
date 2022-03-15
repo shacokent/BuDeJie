@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SKTopicSoundV">
+            <rect key="frame" x="0.0" y="0.0" width="309" height="223"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jd6-a0-prg">
+                    <rect key="frame" x="0.0" y="0.0" width="309" height="223"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KO3-E2-q6u">
+                    <rect key="frame" x="123" y="80" width="63" height="63"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="playButtonPlay" backgroundImage="playButton"/>
+                    <state key="highlighted" image="playButtonPause" backgroundImage="playButtonClick"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="播放时长" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9Z-Pl-Y5v">
+                    <rect key="frame" x="255.5" y="207" width="53.5" height="16"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="播放量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSl-4N-kYK">
+                    <rect key="frame" x="269" y="0.0" width="40" height="16"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="G9Z-Pl-Y5v" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="5kr-vm-jYb"/>
+                <constraint firstItem="Jd6-a0-prg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="FpU-qY-nZW"/>
+                <constraint firstAttribute="trailing" secondItem="rSl-4N-kYK" secondAttribute="trailing" id="K5H-qu-BoZ"/>
+                <constraint firstItem="Jd6-a0-prg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QuQ-Hz-lil"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Jd6-a0-prg" secondAttribute="trailing" id="V1w-6F-BAP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="G9Z-Pl-Y5v" secondAttribute="trailing" id="XEz-Tb-ybL"/>
+                <constraint firstItem="KO3-E2-q6u" firstAttribute="centerX" secondItem="Jd6-a0-prg" secondAttribute="centerX" id="XzJ-xY-ScH"/>
+                <constraint firstItem="KO3-E2-q6u" firstAttribute="centerX" secondItem="Jd6-a0-prg" secondAttribute="centerX" id="jF7-MM-U9b"/>
+                <constraint firstItem="KO3-E2-q6u" firstAttribute="centerY" secondItem="Jd6-a0-prg" secondAttribute="centerY" id="nOz-Ax-sKk"/>
+                <constraint firstItem="rSl-4N-kYK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="s4a-hA-dxE"/>
+                <constraint firstItem="KO3-E2-q6u" firstAttribute="centerY" secondItem="Jd6-a0-prg" secondAttribute="centerY" id="vag-GA-J9E"/>
+                <constraint firstItem="Jd6-a0-prg" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="vj1-qa-g7p"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="soundBackgroundImageView" destination="Jd6-a0-prg" id="xbK-UK-AQs"/>
+                <outlet property="soundPlayButton" destination="KO3-E2-q6u" id="YTK-hh-uOA"/>
+            </connections>
+            <point key="canvasLocation" x="55.797101449275367" y="185.15625"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="playButton" width="63" height="63"/>
+        <image name="playButtonClick" width="63" height="63"/>
+        <image name="playButtonPause" width="26" height="26"/>
+        <image name="playButtonPlay" width="30" height="30"/>
+    </resources>
+</document>

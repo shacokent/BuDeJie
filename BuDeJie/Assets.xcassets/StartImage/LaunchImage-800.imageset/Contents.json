@@ -1,0 +1,14 @@
+{
+  "images" : [
+    {
+      "filename" : "LaunchImage-800-667h@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x",
+      "subtype" : "667h"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
