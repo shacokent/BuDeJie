@@ -14,4 +14,7 @@
     [super viewDidLoad];
 }
 
+-(CellType)loadVCtype{
+    return TopicType;
+}
 @end

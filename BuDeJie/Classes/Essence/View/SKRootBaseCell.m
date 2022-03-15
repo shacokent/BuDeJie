@@ -86,8 +86,7 @@
 
 - (void)setRootbaseItem:(SKTopicItem *)rootbaseItem{
     _rootbaseItem = rootbaseItem;
-    //options:0表示放在沙盒中缓存
-    [self.userIconImageView sd_setImageWithURL:[NSURL URLWithString:rootbaseItem.icon] placeholderImage:[UIImage imageWithRenderOriginalName:@"defaultUserIcon"] options:0 completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+    [self.userIconImageView sd_setImageWithURL:[NSURL URLWithString:rootbaseItem.icon] placeholderImage:[UIImage imageWithRenderOriginalName:@"defaultUserIcon"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
         if(!image) return;//如果图片下载失败，直接返回避免图片位置显示空白
     }];
     self.userNameLab.text = rootbaseItem.name;

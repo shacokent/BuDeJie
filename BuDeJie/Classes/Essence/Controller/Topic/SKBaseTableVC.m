@@ -6,6 +6,44 @@
 //  Copyright © 2022 shacokent. All rights reserved.
 //
 
+/**
+ 封装思想:组合
+ 抽取共同方法到一个类到D，其他类可以导入类，调用其中的方法
+ D:NSObject
+ -(void)run;
+ -(void)test;
+ 
+ 抽取共同方法到一个类到F，其他类可以导入类，调用其中的方法
+ F:NSObject
+ -(void)go;
+ 
+ A:UITableViewController
+ #import "D.h"
+ #import "F.h"
+ -(void)a;
+ [D run];
+ [D test];
+ [F go];
+ 
+ C:UICollectionViewController
+ #import "D.h"
+ #import "F.h"
+ -(void)c;
+ [D run];
+ [D test];
+ [F go];
+ 
+ E:UIViewController
+ #import "D.h"
+ #import "F.h"
+ -(void)e;
+ [D run];
+ [D test];
+ [F go];
+ 
+ */
+
+
 #import "SKBaseTableVC.h"
 #import <MJExtension/MJExtension.h>
 #import "SKRootBaseCell.h"
@@ -45,7 +83,7 @@
 
 @implementation SKBaseTableVC
 
-
+-(CellType)loadVCtype{return 0;}//这里实现仅仅是为了消除警告，永远不会被执行，因为子类方法会覆盖这个方法
 /**
  ////创建多个cell类的写法，纯代码实现，比较繁琐
  static NSString* const SKMovieCellId = @"SKMovieCellId";

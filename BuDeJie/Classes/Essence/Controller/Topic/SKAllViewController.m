@@ -13,4 +13,8 @@
     [super viewDidLoad];
 }
 
+-(CellType)loadVCtype{
+    return AllType;
+}
+
 @end

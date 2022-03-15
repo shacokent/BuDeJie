@@ -8,4 +8,5 @@ pod 'MJExtension'
 pod 'SDWebImage'
 pod 'SVProgressHUD'
 pod 'CTAssetsPickerController'
+pod 'MJRefresh'
 end

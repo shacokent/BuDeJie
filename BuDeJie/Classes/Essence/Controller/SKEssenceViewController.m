@@ -48,25 +48,11 @@
 
 #pragma mark - 初始化子控制器
 -(void)setupAllChileVcs{
-    SKAllViewController * allVc =[[SKAllViewController alloc]init];
-    allVc.loadVCtype = AllType;
-    [self addChildViewController:allVc];
-    
-    SKMovieViewController * movieVc =[[SKMovieViewController alloc]init];
-    movieVc.loadVCtype = MovieType;
-    [self addChildViewController:movieVc];
-    
-    SKSoundViewController * soundVc =[[SKSoundViewController alloc]init];
-    soundVc.loadVCtype = SoundType;
-    [self addChildViewController:soundVc];
-    
-    SKPictureViewController * pictureVc =[[SKPictureViewController alloc]init];
-    pictureVc.loadVCtype = PictureType;
-    [self addChildViewController:pictureVc];
-    
-    SKTopicViewController * topicVc =[[SKTopicViewController alloc]init];
-    topicVc.loadVCtype = TopicType;
-    [self addChildViewController:topicVc];
+    [self addChildViewController:[[SKAllViewController alloc]init]];
+    [self addChildViewController:[[SKMovieViewController alloc]init]];
+    [self addChildViewController:[[SKSoundViewController alloc]init]];
+    [self addChildViewController:[[SKPictureViewController alloc]init]];
+    [self addChildViewController:[[SKTopicViewController alloc]init]];
 }
 
 #pragma mark - 设置导航条

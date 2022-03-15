@@ -12,4 +12,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
+
+-(CellType)loadVCtype{
+    return SoundType;
+}
 @end

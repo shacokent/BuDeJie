@@ -50,6 +50,9 @@ static float const margin =1;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarBtnRepeatClick) name:SKTabBarButtonDidRepeatClickNSNotification object:nil];
 }
 
+
+
+
 -(void)tabBarBtnRepeatClick{
     //重复点击不是我的按钮，那么我的不再window上,所以return
     if(self.view.window == nil) return;

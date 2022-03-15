@@ -11,6 +11,9 @@
 #import <MJExtension/MJExtension.h>
 #import "SKSubTagItem.h"
 #import "SKSubTagCell.h"
+//#import <MJRefresh/MJRefresh.h>//下拉刷新第三方控件
+#import "SKRefreshHeader.h"//继承第三方控件MJRefresh的MJRefreshGifHeader自定义样式
+#import "SKDIYRefreshHeader.h"////继承第三方控件MJRefresh完全自定义样式
 
 static NSString * const cid=@"cell";
 @interface SKSubTagViewController ()
@@ -34,10 +37,7 @@ static NSString * const cid=@"cell";
     [super viewDidLoad];
     NSString *title = NSLocalizedStringFromTable(@"RecommendSignature", @"AppLocalString", nil);
     self.title = title;
-    //提示用户当前正在加载数据 可以用SVProgressHUD
-//    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];//黑色蒙版
-    [SVProgressHUD showWithStatus:@"正在加载中..."];
-    [self loadData];
+    [self setupRefresh];
     //注册Cell
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SKSubTagCell class]) bundle:nil] forCellReuseIdentifier:cid];
     //处理分割线设置内边距,去掉边距，1.自定义分割线，2.用系统设置属性
@@ -51,7 +51,24 @@ static NSString * const cid=@"cell";
 //    (3)cell中重写setFrame方法
 }
 
+-(void)setupRefresh{
+    //header
+    //设置刷新执行方法，无自定义
+//    self.tableView.mj_header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
+//        [self loadData];
+//    }];
+    //继承MJRefreshGifHeader自定义
+//    self.tableView.mj_header = [SKRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+    //完全自定义DIY
+    self.tableView.mj_header = [SKDIYRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+    [self.tableView.mj_header beginRefreshing];//beginRefreshing可以直接触发刷新
+
+}
+
 -(void)loadData{
+    //提示用户当前正在加载数据 可以用SVProgressHUD
+//    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];//黑色蒙版
+    [SVProgressHUD showWithStatus:@"正在加载中..."];
 //   AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
 //    _manager = manager;
 //    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
@@ -74,6 +91,7 @@ static NSString * const cid=@"cell";
     _subTags = [SKSubTagItem mj_objectArrayWithFilename:@"subtag.plist"];
     [self.tableView reloadData];
     [SVProgressHUD dismiss];
+    [self.tableView.mj_header endRefreshing];//结束刷新
 }
 
 #pragma mark - Table view data source

@@ -50,11 +50,6 @@
 		BC33B3C427BF7FD300C3AA98 /* SKPublichViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC33B3C327BF7FD300C3AA98 /* SKPublichViewController.m */; };
 		BC33B3C827BF9FB200C3AA98 /* UIImage+SK.m in Sources */ = {isa = PBXBuildFile; fileRef = BC33B3C727BF9FB200C3AA98 /* UIImage+SK.m */; };
 		BC33B3D027BFA38D00C3AA98 /* SKTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC33B3CF27BFA38D00C3AA98 /* SKTabViewController.m */; };
-		BC3BB13C27D1B9550087C345 /* SKBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3BB13B27D1B9550087C345 /* SKBaseCell.m */; };
-		BC3BB14A27D1BB7C0087C345 /* SKMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3BB14927D1BB7C0087C345 /* SKMovieCell.m */; };
-		BC3BB14D27D1BB8A0087C345 /* SKSoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3BB14C27D1BB8A0087C345 /* SKSoundCell.m */; };
-		BC3BB15027D1BB9A0087C345 /* SKPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3BB14F27D1BB9A0087C345 /* SKPictureCell.m */; };
-		BC3BB15327D1BBA60087C345 /* SKTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3BB15227D1BBA60087C345 /* SKTopicCell.m */; };
 		BC3BB15727D1F8A30087C345 /* SKRootBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3BB15527D1F8A30087C345 /* SKRootBaseCell.m */; };
 		BC3BB15827D1F8A30087C345 /* SKRootBaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3BB15627D1F8A30087C345 /* SKRootBaseCell.xib */; };
 		BC3BB16027D5F9FD0087C345 /* SKTopicMovieV.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3BB15F27D5F9FD0087C345 /* SKTopicMovieV.m */; };
@@ -87,6 +82,15 @@
 		BCFDC61C27DF5BF600B21CD1 /* SKTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDC61227DF5BF600B21CD1 /* SKTopicViewController.m */; };
 		BCFDC61D27DF5BF600B21CD1 /* SKSoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDC61327DF5BF600B21CD1 /* SKSoundViewController.m */; };
 		BCFDC61E27DF5BF600B21CD1 /* SKBaseTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDC61627DF5BF600B21CD1 /* SKBaseTableVC.m */; };
+		BCFDC62A27E0384C00B21CD1 /* SKBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDC62227E0384C00B21CD1 /* SKBaseCell.m */; };
+		BCFDC62B27E0384C00B21CD1 /* SKMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDC62327E0384C00B21CD1 /* SKMovieCell.m */; };
+		BCFDC62C27E0384C00B21CD1 /* SKPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDC62427E0384C00B21CD1 /* SKPictureCell.m */; };
+		BCFDC62D27E0384C00B21CD1 /* SKTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDC62527E0384C00B21CD1 /* SKTopicCell.m */; };
+		BCFDC62E27E0384C00B21CD1 /* SKSoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDC62627E0384C00B21CD1 /* SKSoundCell.m */; };
+		BCFDC63227E07D2700B21CD1 /* SKRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDC63127E07D2700B21CD1 /* SKRefreshHeader.m */; };
+		BCFDC63527E0836700B21CD1 /* SKDIYRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDC63427E0836700B21CD1 /* SKDIYRefreshHeader.m */; };
+		BCFDC63C27E0A15300B21CD1 /* SKCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDC63A27E0A15300B21CD1 /* SKCollectionCell.m */; };
+		BCFDC63D27E0A15300B21CD1 /* SKCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFDC63B27E0A15300B21CD1 /* SKCollectionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,16 +166,6 @@
 		BC33B3C927BFA0E800C3AA98 /* BuDeJie.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuDeJie.pch; sourceTree = "<group>"; };
 		BC33B3CE27BFA38D00C3AA98 /* SKTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKTabViewController.h; sourceTree = "<group>"; };
 		BC33B3CF27BFA38D00C3AA98 /* SKTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKTabViewController.m; sourceTree = "<group>"; };
-		BC3BB13A27D1B9550087C345 /* SKBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKBaseCell.h; sourceTree = "<group>"; };
-		BC3BB13B27D1B9550087C345 /* SKBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKBaseCell.m; sourceTree = "<group>"; };
-		BC3BB14827D1BB7C0087C345 /* SKMovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKMovieCell.h; sourceTree = "<group>"; };
-		BC3BB14927D1BB7C0087C345 /* SKMovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKMovieCell.m; sourceTree = "<group>"; };
-		BC3BB14B27D1BB8A0087C345 /* SKSoundCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKSoundCell.h; sourceTree = "<group>"; };
-		BC3BB14C27D1BB8A0087C345 /* SKSoundCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSoundCell.m; sourceTree = "<group>"; };
-		BC3BB14E27D1BB9A0087C345 /* SKPictureCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKPictureCell.h; sourceTree = "<group>"; };
-		BC3BB14F27D1BB9A0087C345 /* SKPictureCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKPictureCell.m; sourceTree = "<group>"; };
-		BC3BB15127D1BBA60087C345 /* SKTopicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKTopicCell.h; sourceTree = "<group>"; };
-		BC3BB15227D1BBA60087C345 /* SKTopicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKTopicCell.m; sourceTree = "<group>"; };
 		BC3BB15427D1F8A30087C345 /* SKRootBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKRootBaseCell.h; sourceTree = "<group>"; };
 		BC3BB15527D1F8A30087C345 /* SKRootBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKRootBaseCell.m; sourceTree = "<group>"; };
 		BC3BB15627D1F8A30087C345 /* SKRootBaseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SKRootBaseCell.xib; sourceTree = "<group>"; };
@@ -228,6 +222,23 @@
 		BCFDC61627DF5BF600B21CD1 /* SKBaseTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKBaseTableVC.m; sourceTree = "<group>"; };
 		BCFDC61727DF5BF600B21CD1 /* SKAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAllViewController.h; sourceTree = "<group>"; };
 		BCFDC61827DF5BF600B21CD1 /* SKTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTopicViewController.h; sourceTree = "<group>"; };
+		BCFDC62027E0384C00B21CD1 /* SKTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTopicCell.h; sourceTree = "<group>"; };
+		BCFDC62127E0384C00B21CD1 /* SKSoundCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSoundCell.h; sourceTree = "<group>"; };
+		BCFDC62227E0384C00B21CD1 /* SKBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKBaseCell.m; sourceTree = "<group>"; };
+		BCFDC62327E0384C00B21CD1 /* SKMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKMovieCell.m; sourceTree = "<group>"; };
+		BCFDC62427E0384C00B21CD1 /* SKPictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPictureCell.m; sourceTree = "<group>"; };
+		BCFDC62527E0384C00B21CD1 /* SKTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTopicCell.m; sourceTree = "<group>"; };
+		BCFDC62627E0384C00B21CD1 /* SKSoundCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSoundCell.m; sourceTree = "<group>"; };
+		BCFDC62727E0384C00B21CD1 /* SKMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKMovieCell.h; sourceTree = "<group>"; };
+		BCFDC62827E0384C00B21CD1 /* SKBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKBaseCell.h; sourceTree = "<group>"; };
+		BCFDC62927E0384C00B21CD1 /* SKPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPictureCell.h; sourceTree = "<group>"; };
+		BCFDC63027E07D2700B21CD1 /* SKRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKRefreshHeader.h; sourceTree = "<group>"; };
+		BCFDC63127E07D2700B21CD1 /* SKRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKRefreshHeader.m; sourceTree = "<group>"; };
+		BCFDC63327E0836700B21CD1 /* SKDIYRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKDIYRefreshHeader.h; sourceTree = "<group>"; };
+		BCFDC63427E0836700B21CD1 /* SKDIYRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKDIYRefreshHeader.m; sourceTree = "<group>"; };
+		BCFDC63927E0A15300B21CD1 /* SKCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKCollectionCell.h; sourceTree = "<group>"; };
+		BCFDC63A27E0A15300B21CD1 /* SKCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKCollectionCell.m; sourceTree = "<group>"; };
+		BCFDC63B27E0A15300B21CD1 /* SKCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SKCollectionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -547,6 +558,7 @@
 		BC33B3AB27BF7EE300C3AA98 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BCFDC61F27E0384C00B21CD1 /* 纯代码实现才会用到 */,
 				BCABFF0327C91E9F00B72B44 /* SKTitleButton.h */,
 				BCABFF0427C91E9F00B72B44 /* SKTitleButton.m */,
 				BC3BB15427D1F8A30087C345 /* SKRootBaseCell.h */,
@@ -561,16 +573,6 @@
 				BC3BB16627D5FA860087C345 /* SKTopicPictureV.h */,
 				BC3BB16727D5FA860087C345 /* SKTopicPictureV.m */,
 				BC3BB16B27D5FA9E0087C345 /* SKTopicPictureV.xib */,
-				BC3BB13A27D1B9550087C345 /* SKBaseCell.h */,
-				BC3BB13B27D1B9550087C345 /* SKBaseCell.m */,
-				BC3BB14827D1BB7C0087C345 /* SKMovieCell.h */,
-				BC3BB14927D1BB7C0087C345 /* SKMovieCell.m */,
-				BC3BB14B27D1BB8A0087C345 /* SKSoundCell.h */,
-				BC3BB14C27D1BB8A0087C345 /* SKSoundCell.m */,
-				BC3BB14E27D1BB9A0087C345 /* SKPictureCell.h */,
-				BC3BB14F27D1BB9A0087C345 /* SKPictureCell.m */,
-				BC3BB15127D1BBA60087C345 /* SKTopicCell.h */,
-				BC3BB15227D1BBA60087C345 /* SKTopicCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -653,6 +655,9 @@
 				BCC7B8E327C4E82300767A2C /* SKSubTagCell.h */,
 				BCC7B8E427C4E82300767A2C /* SKSubTagCell.m */,
 				BCC7B8E527C4E82300767A2C /* SKSubTagCell.xib */,
+				BCFDC63927E0A15300B21CD1 /* SKCollectionCell.h */,
+				BCFDC63A27E0A15300B21CD1 /* SKCollectionCell.m */,
+				BCFDC63B27E0A15300B21CD1 /* SKCollectionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -711,6 +716,10 @@
 			children = (
 				BC16401327C33A25001054EE /* SKTabBar.h */,
 				BC16401427C33A25001054EE /* SKTabBar.m */,
+				BCFDC63027E07D2700B21CD1 /* SKRefreshHeader.h */,
+				BCFDC63127E07D2700B21CD1 /* SKRefreshHeader.m */,
+				BCFDC63327E0836700B21CD1 /* SKDIYRefreshHeader.h */,
+				BCFDC63427E0836700B21CD1 /* SKDIYRefreshHeader.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -750,6 +759,23 @@
 				BCFDC61227DF5BF600B21CD1 /* SKTopicViewController.m */,
 			);
 			path = Topic;
+			sourceTree = "<group>";
+		};
+		BCFDC61F27E0384C00B21CD1 /* 纯代码实现才会用到 */ = {
+			isa = PBXGroup;
+			children = (
+				BCFDC62027E0384C00B21CD1 /* SKTopicCell.h */,
+				BCFDC62127E0384C00B21CD1 /* SKSoundCell.h */,
+				BCFDC62227E0384C00B21CD1 /* SKBaseCell.m */,
+				BCFDC62327E0384C00B21CD1 /* SKMovieCell.m */,
+				BCFDC62427E0384C00B21CD1 /* SKPictureCell.m */,
+				BCFDC62527E0384C00B21CD1 /* SKTopicCell.m */,
+				BCFDC62627E0384C00B21CD1 /* SKSoundCell.m */,
+				BCFDC62727E0384C00B21CD1 /* SKMovieCell.h */,
+				BCFDC62827E0384C00B21CD1 /* SKBaseCell.h */,
+				BCFDC62927E0384C00B21CD1 /* SKPictureCell.h */,
+			);
+			path = "纯代码实现才会用到";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -837,6 +863,7 @@
 				BC274F8B27C637A4006E9178 /* SKFriendTrendViewController.xib in Resources */,
 				BC3BB17627D9F3DA0087C345 /* SKPublichViewController.xib in Resources */,
 				BC16403A27C3DC97001054EE /* LaunchImage-700-568h@2x.png in Resources */,
+				BCFDC63D27E0A15300B21CD1 /* SKCollectionCell.xib in Resources */,
 				BC274F9527C64B40006E9178 /* SKLoginRegisterView.xib in Resources */,
 				BC3BB16227D5FA1D0087C345 /* SKTopicMovieV.xib in Resources */,
 				BC274FAA27C76139006E9178 /* SKSquareCell.xib in Resources */,
@@ -900,23 +927,25 @@
 				BC33B3C827BF9FB200C3AA98 /* UIImage+SK.m in Sources */,
 				BC33B3B527BF7EE400C3AA98 /* AppDelegate.m in Sources */,
 				BC3BB18127DB39B90087C345 /* SKAlert.m in Sources */,
-				BC3BB15327D1BBA60087C345 /* SKTopicCell.m in Sources */,
 				BCFDC61E27DF5BF600B21CD1 /* SKBaseTableVC.m in Sources */,
-				BC3BB14A27D1BB7C0087C345 /* SKMovieCell.m in Sources */,
-				BC3BB13C27D1B9550087C345 /* SKBaseCell.m in Sources */,
 				BC16401227C3344D001054EE /* SKBaseNavigationController.m in Sources */,
+				BCFDC63C27E0A15300B21CD1 /* SKCollectionCell.m in Sources */,
 				BC33B3BE27BF7FA000C3AA98 /* SKMeViewController.m in Sources */,
+				BCFDC63227E07D2700B21CD1 /* SKRefreshHeader.m in Sources */,
 				BC33B3D027BFA38D00C3AA98 /* SKTabViewController.m in Sources */,
 				BC3BB16027D5F9FD0087C345 /* SKTopicMovieV.m in Sources */,
 				BC16401827C365F2001054EE /* UIView+SKFrame.m in Sources */,
 				BC274FA327C731BB006E9178 /* UITextField+SKPlaceHolder.m in Sources */,
+				BCFDC62C27E0384C00B21CD1 /* SKPictureCell.m in Sources */,
 				BC3BB17A27D9FA2D0087C345 /* SKPhotoTool.m in Sources */,
 				BCC7B8E227C4E2FF00767A2C /* SKSubTagItem.m in Sources */,
+				BCFDC62A27E0384C00B21CD1 /* SKBaseCell.m in Sources */,
 				BCFDC61B27DF5BF600B21CD1 /* SKAllViewController.m in Sources */,
+				BCFDC62E27E0384C00B21CD1 /* SKSoundCell.m in Sources */,
 				BC3BB16527D5FA700087C345 /* SKTopicSoundV.m in Sources */,
 				BC16403E27C499B4001054EE /* SKAdItem.m in Sources */,
+				BCFDC62D27E0384C00B21CD1 /* SKTopicCell.m in Sources */,
 				BC33B3BB27BF7F7700C3AA98 /* SKFriendTrendViewController.m in Sources */,
-				BC3BB15027D1BB9A0087C345 /* SKPictureCell.m in Sources */,
 				BC274FA927C76139006E9178 /* SKSquareCell.m in Sources */,
 				BC274FA027C72A62006E9178 /* SKLoginField.m in Sources */,
 				BC274F9827C68D15006E9178 /* SKFastLoginView.m in Sources */,
@@ -933,10 +962,11 @@
 				BCFDC61927DF5BF600B21CD1 /* SKMovieViewController.m in Sources */,
 				BC16401B27C36E94001054EE /* UIBarButtonItem+SKBarButtonItem.m in Sources */,
 				BC3BB17327D887110087C345 /* SKSeeBigPictureVC.m in Sources */,
-				BC3BB14D27D1BB8A0087C345 /* SKSoundCell.m in Sources */,
 				BC33B3C127BF7FBF00C3AA98 /* SKNewViewController.m in Sources */,
 				BC3BB16F27D7033C0087C345 /* UIImageView+SK.m in Sources */,
+				BCFDC62B27E0384C00B21CD1 /* SKMovieCell.m in Sources */,
 				BC16401527C33A25001054EE /* SKTabBar.m in Sources */,
+				BCFDC63527E0836700B21CD1 /* SKDIYRefreshHeader.m in Sources */,
 				BC274FBD27C88D37006E9178 /* SKFileTool.m in Sources */,
 				BC274F9D27C69381006E9178 /* SKFastButton.m in Sources */,
 				BCFDC61C27DF5BF600B21CD1 /* SKTopicViewController.m in Sources */,

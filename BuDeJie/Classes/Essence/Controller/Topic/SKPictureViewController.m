@@ -15,4 +15,7 @@
     [super viewDidLoad];
 }
 
+-(CellType)loadVCtype{
+    return PictureType;
+}
 @end
