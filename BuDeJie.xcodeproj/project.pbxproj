@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AD79A4A99FBB2FCD959A6E40 /* libPods-BuDeJie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B5C2A08F0F6C823F9D5DFA8 /* libPods-BuDeJie.a */; };
+		BC03391727E1DCFF002B46FB /* SKlocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC03391527E1DCFF002B46FB /* SKlocationVC.m */; };
+		BC03391827E1DCFF002B46FB /* SKlocationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC03391627E1DCFF002B46FB /* SKlocationVC.xib */; };
 		BC16401227C3344D001054EE /* SKBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC16401127C3344D001054EE /* SKBaseNavigationController.m */; };
 		BC16401527C33A25001054EE /* SKTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC16401427C33A25001054EE /* SKTabBar.m */; };
 		BC16401827C365F2001054EE /* UIView+SKFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BC16401727C365F2001054EE /* UIView+SKFrame.m */; };
@@ -97,6 +99,9 @@
 		0B5C2A08F0F6C823F9D5DFA8 /* libPods-BuDeJie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BuDeJie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C97D995AAD019F57132E2ED /* Pods-BuDeJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuDeJie.debug.xcconfig"; path = "Target Support Files/Pods-BuDeJie/Pods-BuDeJie.debug.xcconfig"; sourceTree = "<group>"; };
 		BA3007C295C90EF0BEABF4B0 /* Pods-BuDeJie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuDeJie.release.xcconfig"; path = "Target Support Files/Pods-BuDeJie/Pods-BuDeJie.release.xcconfig"; sourceTree = "<group>"; };
+		BC03391427E1DCFF002B46FB /* SKlocationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKlocationVC.h; sourceTree = "<group>"; };
+		BC03391527E1DCFF002B46FB /* SKlocationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKlocationVC.m; sourceTree = "<group>"; };
+		BC03391627E1DCFF002B46FB /* SKlocationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SKlocationVC.xib; sourceTree = "<group>"; };
 		BC16401027C3344D001054EE /* SKBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKBaseNavigationController.h; sourceTree = "<group>"; };
 		BC16401127C3344D001054EE /* SKBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKBaseNavigationController.m; sourceTree = "<group>"; };
 		BC16401327C33A25001054EE /* SKTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKTabBar.h; sourceTree = "<group>"; };
@@ -268,6 +273,16 @@
 				0B5C2A08F0F6C823F9D5DFA8 /* libPods-BuDeJie.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC03391027E1DC50002B46FB /* locationVc */ = {
+			isa = PBXGroup;
+			children = (
+				BC03391427E1DCFF002B46FB /* SKlocationVC.h */,
+				BC03391527E1DCFF002B46FB /* SKlocationVC.m */,
+				BC03391627E1DCFF002B46FB /* SKlocationVC.xib */,
+			);
+			path = locationVc;
 			sourceTree = "<group>";
 		};
 		BC16401C27C37DE5001054EE /* Setting */ = {
@@ -502,6 +517,7 @@
 		BC33B3A527BF7EE300C3AA98 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BC03391027E1DC50002B46FB /* locationVc */,
 				BC33B3C227BF7FD300C3AA98 /* SKPublichViewController.h */,
 				BC33B3C327BF7FD300C3AA98 /* SKPublichViewController.m */,
 				BC3BB17527D9F3DA0087C345 /* SKPublichViewController.xib */,
@@ -847,6 +863,7 @@
 				BC3BB15827D1F8A30087C345 /* SKRootBaseCell.xib in Resources */,
 				BC274F9A27C68D20006E9178 /* SKFastLoginView.xib in Resources */,
 				BC274FA527C73D82006E9178 /* SKMeViewController.storyboard in Resources */,
+				BC03391827E1DCFF002B46FB /* SKlocationVC.xib in Resources */,
 				BC3BB19627DF388F0087C345 /* LaunchScreen.storyboard in Resources */,
 				BC3BB16A27D5FA930087C345 /* SKTopicSoundV.xib in Resources */,
 				BC274F9027C63C0F006E9178 /* SKLoginRegisterViewController.xib in Resources */,
@@ -929,6 +946,7 @@
 				BC3BB18127DB39B90087C345 /* SKAlert.m in Sources */,
 				BCFDC61E27DF5BF600B21CD1 /* SKBaseTableVC.m in Sources */,
 				BC16401227C3344D001054EE /* SKBaseNavigationController.m in Sources */,
+				BC03391727E1DCFF002B46FB /* SKlocationVC.m in Sources */,
 				BCFDC63C27E0A15300B21CD1 /* SKCollectionCell.m in Sources */,
 				BC33B3BE27BF7FA000C3AA98 /* SKMeViewController.m in Sources */,
 				BCFDC63227E07D2700B21CD1 /* SKRefreshHeader.m in Sources */,
@@ -1139,6 +1157,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BuDeJie/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = camera;
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "前后台定位";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "前台定位";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = photo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1174,6 +1195,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BuDeJie/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = camera;
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "前后台定位";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "前台定位";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = photo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

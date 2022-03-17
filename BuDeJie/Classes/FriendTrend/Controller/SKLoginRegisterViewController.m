@@ -26,7 +26,7 @@
      1.一个view从xib中加载，一定要重新固定尺寸
      2.设置frame不要再viewDidLoad中设置，要在viewDidLayoutSubviews中设置,viewDidLayoutSubviews才会根据布局调整尺寸
      */
-    //添加中间view
+    //添加中间view,
     SKLoginRegisterView *loginV = [SKLoginRegisterView loginView];
     [self.middleView addSubview:loginV];
     SKLoginRegisterView *registerV = [SKLoginRegisterView registerView];

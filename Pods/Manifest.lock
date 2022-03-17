@@ -16,6 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - CTAssetsPickerController (3.3.1):
     - PureLayout (~> 3.0.0)
+  - INTULocationManager (4.3.2)
   - MJExtension (3.4.1)
   - MJRefresh (3.7.5)
   - PureLayout (3.0.2)
@@ -27,6 +28,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - CTAssetsPickerController
+  - INTULocationManager
   - MJExtension
   - MJRefresh
   - SDWebImage
@@ -36,6 +38,7 @@ SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - AFNetworking
     - CTAssetsPickerController
+    - INTULocationManager
     - MJExtension
     - MJRefresh
     - PureLayout
@@ -45,12 +48,13 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   CTAssetsPickerController: e659c8a6dd0c430873c832a9bf16234810057bfa
+  INTULocationManager: cb543d7393d1f9489d9345827c0ca00a3cc1e32f
   MJExtension: a90ab9155c6dbef5926d219d6f23dbe537f18c8e
   MJRefresh: c46186f86edfbea296926150111dd15f20f88ec7
   PureLayout: abc0cd1780b3ca207343a4abe365f09fdcc3a571
   SDWebImage: fe429e527c8b26c41a7d2ffb00c830f689425500
   SVProgressHUD: 083f84f3f3c9d4d021a0774eb13892379660f440
 
-PODFILE CHECKSUM: 7496246329b37bfc9ad2620802303d3331288083
+PODFILE CHECKSUM: 1e325b18b41152e20c53e2fafd01e428b2464c13
 
 COCOAPODS: 1.11.2

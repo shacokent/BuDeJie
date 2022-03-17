@@ -8,6 +8,7 @@
 
 #import "SKPublichViewController.h"
 #import "SKPhotoTool.h"
+#import "SKlocationVC.h"
 @interface SKPublichViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,CTAssetsPickerControllerDelegate>
 
 @end
@@ -129,5 +130,11 @@
 -(void)back{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (IBAction)locationClick:(UIButton *)sender {
+    SKlocationVC *locationvc = [[SKlocationVC alloc] init];
+    [self.navigationController pushViewController:locationvc animated:YES];
+}
+
 
 @end

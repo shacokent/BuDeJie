@@ -9,4 +9,5 @@ pod 'SDWebImage'
 pod 'SVProgressHUD'
 pod 'CTAssetsPickerController'
 pod 'MJRefresh'
+pod 'INTULocationManager'
 end

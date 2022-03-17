@@ -98,7 +98,6 @@
     SKPublichViewController *publishVc = [[SKPublichViewController alloc]init];
     UINavigationController *nav = [[UINavigationController alloc]init];
     [nav addChildViewController:publishVc];
-    nav.navigationBarHidden = YES;
     [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
 }
 @end
