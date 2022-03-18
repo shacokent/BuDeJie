@@ -11,7 +11,7 @@
 #import "INTULocationManager.h"//第三方定位框架
 #import <MapKit/MapKit.h>
 
-@interface SKlocationVC ()<CLLocationManagerDelegate>
+@interface SKlocationVC ()<CLLocationManagerDelegate,MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic,strong) CLLocationManager *manager;
 @property (nonatomic,strong) CLLocation *lastlocation;
@@ -129,10 +129,72 @@
 //    self.mapView.showsCompass = NO;//显示指南针
 //    self.mapView.showsPointsOfInterest = NO;//显示兴趣点
 //    self.mapView.showsTraffic = NO;//显示交通状况
-    self.mapView.showsUserLocation = YES;//    显示用户位置,不会放大，不会跟着用户跑
-    self.mapView.userTrackingMode = MKUserTrackingModeFollowWithHeading;//用户的追踪模式，会方法，跟着用户跑，但是拖动地图可能会失效
+    
+    //用户追踪
+    self.mapView.showsUserLocation = YES;//显示用户位置,不会放大，不会跟着用户跑
+//    self.mapView.userTrackingMode = MKUserTrackingModeFollowWithHeading;//用户的追踪模式，会方法，跟着用户跑，但是拖动地图可能会失效
+    
+    //自己实现用户追踪
+    //设置代理
+    self.mapView.delegate =self;
     
 }
+#pragma mark - MKMapViewDelegate
+/// 当地图更新用户位置信息时调用
+/// @param mapView 地图
+/// @param userLocation 大头针数据模型
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+   //需要在代理viewForAnnotation中自定义图标才会显示用户信息
+    userLocation.title = @"这是title";
+    userLocation.subtitle = @"这是subtitle";
+//    SKLog(@"用户位置-%@",userLocation.location);
+//    SKLog(@"用户设备朝向-%f",userLocation.heading.magneticHeading);
+    //地图跟着用户跑，设置中心坐标,不会自动放大
+//    [self.mapView setCenterCoordinate:userLocation.location.coordinate animated:YES];
+    //设置地图显示区域，实现自动放大
+//MKCoordinateSpan:跨度
+    MKCoordinateRegion region = MKCoordinateRegionMake(userLocation.location.coordinate,MKCoordinateSpanMake(0.0005,0.0005));
+    [self.mapView setRegion:region animated:YES];
+    
+}
+
+
+/// 区域改变调用
+/// @param mapView 地图
+/// @param animated 动画
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    //可以打印出合适的跨度，然后拷贝到didUpdateUserLocation代理中设置跨度
+//    SKLog(@"%f---%f",mapView.region.span.latitudeDelta,mapView.region.span.longitudeDelta);
+}
+
+/// 自定义用户标识
+/// @param mapView 地图
+/// @param annotation 注释
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+    static NSString *identifier = @"imageID";
+     
+    MKAnnotationView *pin = [ mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    if ( !pin )
+    {
+            pin = [ [ MKAnnotationView alloc ] initWithAnnotation:annotation reuseIdentifier:identifier ];
+//            随便加载了一张ICON
+//            我的icon的大小是48X48 大家可根据仔细的喜好制定自己的icon
+            pin.image = [ UIImage imageNamed:@"Profile_AddV_authen" ];
+            //在图中我们可以看到图标的上方，有个气泡弹窗里面写着当前用户的位置所在地
+            //原因是这里需要设置了True
+            pin.canShowCallout=YES;
+            //上图气泡的右侧还有一个带箭头的小按钮
+            //这个按钮就是在这里创建的，不过MOMO目前没有写按钮的响应事件喔。
+            //细心的朋友可以自己加上。
+            UIButton *btn = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            pin.rightCalloutAccessoryView=btn;
+    }
+ 
+    pin.annotation = annotation;
+ 
+    return pin;
+}
+
 #pragma mark - CLLocationManagerDelegate
 #pragma mark - 定位
 /// 定位到之后的调用
