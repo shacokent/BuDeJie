@@ -10,6 +10,8 @@
 		AD79A4A99FBB2FCD959A6E40 /* libPods-BuDeJie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B5C2A08F0F6C823F9D5DFA8 /* libPods-BuDeJie.a */; };
 		BC03391727E1DCFF002B46FB /* SKlocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC03391527E1DCFF002B46FB /* SKlocationVC.m */; };
 		BC03391827E1DCFF002B46FB /* SKlocationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC03391627E1DCFF002B46FB /* SKlocationVC.xib */; };
+		BC03393D27E46FC6002B46FB /* SKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC03393C27E46FC6002B46FB /* SKAnnotation.m */; };
+		BC03394027E831AC002B46FB /* SKAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC03393F27E831AC002B46FB /* SKAnnotationView.m */; };
 		BC16401227C3344D001054EE /* SKBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC16401127C3344D001054EE /* SKBaseNavigationController.m */; };
 		BC16401527C33A25001054EE /* SKTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC16401427C33A25001054EE /* SKTabBar.m */; };
 		BC16401827C365F2001054EE /* UIView+SKFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BC16401727C365F2001054EE /* UIView+SKFrame.m */; };
@@ -102,6 +104,10 @@
 		BC03391427E1DCFF002B46FB /* SKlocationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKlocationVC.h; sourceTree = "<group>"; };
 		BC03391527E1DCFF002B46FB /* SKlocationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKlocationVC.m; sourceTree = "<group>"; };
 		BC03391627E1DCFF002B46FB /* SKlocationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SKlocationVC.xib; sourceTree = "<group>"; };
+		BC03393B27E46FC6002B46FB /* SKAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKAnnotation.h; sourceTree = "<group>"; };
+		BC03393C27E46FC6002B46FB /* SKAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKAnnotation.m; sourceTree = "<group>"; };
+		BC03393E27E831AC002B46FB /* SKAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKAnnotationView.h; sourceTree = "<group>"; };
+		BC03393F27E831AC002B46FB /* SKAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKAnnotationView.m; sourceTree = "<group>"; };
 		BC16401027C3344D001054EE /* SKBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKBaseNavigationController.h; sourceTree = "<group>"; };
 		BC16401127C3344D001054EE /* SKBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKBaseNavigationController.m; sourceTree = "<group>"; };
 		BC16401327C33A25001054EE /* SKTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKTabBar.h; sourceTree = "<group>"; };
@@ -528,6 +534,8 @@
 		BC33B3A627BF7EE300C3AA98 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BC03393B27E46FC6002B46FB /* SKAnnotation.h */,
+				BC03393C27E46FC6002B46FB /* SKAnnotation.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -535,6 +543,8 @@
 		BC33B3A727BF7EE300C3AA98 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC03393E27E831AC002B46FB /* SKAnnotationView.h */,
+				BC03393F27E831AC002B46FB /* SKAnnotationView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -950,6 +960,7 @@
 				BCFDC63C27E0A15300B21CD1 /* SKCollectionCell.m in Sources */,
 				BC33B3BE27BF7FA000C3AA98 /* SKMeViewController.m in Sources */,
 				BCFDC63227E07D2700B21CD1 /* SKRefreshHeader.m in Sources */,
+				BC03393D27E46FC6002B46FB /* SKAnnotation.m in Sources */,
 				BC33B3D027BFA38D00C3AA98 /* SKTabViewController.m in Sources */,
 				BC3BB16027D5F9FD0087C345 /* SKTopicMovieV.m in Sources */,
 				BC16401827C365F2001054EE /* UIView+SKFrame.m in Sources */,
@@ -993,6 +1004,7 @@
 				BCFDC61A27DF5BF600B21CD1 /* SKPictureViewController.m in Sources */,
 				BC7C8C2A27CCA9B0003788FD /* SKConst.m in Sources */,
 				BC274FB727C7939F006E9178 /* SKWebViewController.m in Sources */,
+				BC03394027E831AC002B46FB /* SKAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

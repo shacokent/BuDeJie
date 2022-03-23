@@ -9,7 +9,8 @@
 #import "SKlocationVC.h"
 #import <CoreLocation/CoreLocation.h>
 #import "INTULocationManager.h"//第三方定位框架
-#import <MapKit/MapKit.h>
+#import "SKAnnotation.h"//自定义大头针数据模型
+#import "SKAnnotationView.h"
 
 @interface SKlocationVC ()<CLLocationManagerDelegate,MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -138,23 +139,192 @@
     //设置代理
     self.mapView.delegate =self;
     
+    //添加改变追踪模式按钮
+    MKUserTrackingBarButtonItem *item = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
+    self.navigationItem.rightBarButtonItem = item;
+    
+    
+    
+//    六、导航
+    //调用系统导航APP
+//    CLGeocoder *geo = [[CLGeocoder alloc] init];
+//    [geo geocodeAddressString:@"北京市" completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+//        CLPlacemark * startclcp = placemarks.firstObject;
+//        [geo geocodeAddressString:@"天津市" completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+//            CLPlacemark * endclcp = placemarks.firstObject;
+//            [self beginNav:startclcp endplcl:endclcp];
+//        }];
+//    }];
+    
+    //七、3d视图
+        //cameraLookingAtCenterCoordinate:观察的点
+        //fromEyeCoordinate:眼睛的位置
+        //eyeAltitude：眼睛所在的高度
+    MKMapCamera *camrea = [MKMapCamera cameraLookingAtCenterCoordinate:self.mapView.centerCoordinate fromEyeCoordinate:CLLocationCoordinate2DMake(self.mapView.centerCoordinate.latitude, self.mapView.centerCoordinate.longitude+0.1) eyeAltitude:500];
+    [self.mapView setCamera:camrea animated:YES];
+    
+    //八、地图截图
+    MKMapSnapshotOptions* option = [[MKMapSnapshotOptions alloc]init];
+    option.camera = camrea;
+    option.region = self.mapView.region;
+    option.mapType = MKMapTypeSatellite;
+    MKMapSnapshotter *snapshoter = [[MKMapSnapshotter alloc] initWithOptions:option];
+    [snapshoter startWithCompletionHandler:^(MKMapSnapshot * _Nullable snapshot, NSError * _Nullable error) {
+        self.zhinanzhenImage.image = snapshot.image;
+    }];
+    
+    //九、poi检索
+    MKLocalSearchRequest * request = [[MKLocalSearchRequest alloc]init];
+    request.naturalLanguageQuery = @"小吃";
+    request.region = self.mapView.region;
+    MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
+    [search startWithCompletionHandler:^(MKLocalSearchResponse * _Nullable response, NSError * _Nullable error) {
+        SKLog(@"poi检索---%@",response.mapItems.firstObject.name);
+    }];
+    
+    
+    //十、导航，想苹果服务器请求导航数据信息完成导航
+    
+    //添加一个圆形覆盖层
+//    创建圆形覆盖层数据模型
+    MKCircle *circle = [MKCircle circleWithCenterCoordinate:self.mapView.centerCoordinate radius:100000];
+//    添加模型到地图上
+    [self.mapView addOverlay:circle];
+//    地图调用代理添加覆盖层视图MKMapViewDelegate
+//   实现代理方法 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
+    
+    CLGeocoder *geo = [[CLGeocoder alloc] init];
+    [geo geocodeAddressString:@"北京市" completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        CLPlacemark * startclcp = placemarks.firstObject;
+        [geo geocodeAddressString:@"天津市" completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+            CLPlacemark * endclcp = placemarks.firstObject;
+            [self beginServerNav:startclcp endplcl:endclcp];
+        }];
+    }];
+
+    
 }
+
+//六、导航,调用系统导航APP
+-(void)beginNav:(CLPlacemark*)startplcl endplcl:(CLPlacemark*)endplcl{
+   //开始位置
+    MKPlacemark* startplclmk = [[MKPlacemark alloc]initWithPlacemark:startplcl];
+    MKMapItem *startitem = [[MKMapItem alloc]initWithPlacemark:startplclmk];
+    //结束位置
+    MKPlacemark* endplclmk = [[MKPlacemark alloc]initWithPlacemark:endplcl];
+    MKMapItem *enditem = [[MKMapItem alloc]initWithPlacemark:endplclmk];
+    NSArray<MKMapItem*> * items = @[startitem,enditem];
+    NSDictionary<NSString *,id> * dic = @{
+        MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving,
+        MKLaunchOptionsMapTypeKey:@(MKMapTypeStandard),
+        MKLaunchOptionsShowsTrafficKey:@(true),
+    };
+    [MKMapItem openMapsWithItems:items launchOptions:dic];
+}
+
+//十、导航，想苹果服务器请求导航数据信息完成导航
+-(void)beginServerNav:(CLPlacemark*)startplcl endplcl:(CLPlacemark*)endplcl{
+   //开始位置
+    MKPlacemark* startplclmk = [[MKPlacemark alloc]initWithPlacemark:startplcl];
+    MKMapItem *startitem = [[MKMapItem alloc]initWithPlacemark:startplclmk];
+    //结束位置
+    MKPlacemark* endplclmk = [[MKPlacemark alloc]initWithPlacemark:endplcl];
+    MKMapItem *enditem = [[MKMapItem alloc]initWithPlacemark:endplclmk];
+    MKDirectionsRequest *requestDirect =  [[MKDirectionsRequest alloc]init];
+    requestDirect.source = startitem;
+    requestDirect.destination= enditem;
+    MKDirections *directions = [[MKDirections alloc]initWithRequest:requestDirect];
+    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse * _Nullable response, NSError * _Nullable error) {
+        for(MKRoute *route in response.routes){
+            SKLog(@"导航怎么走,路线名称---%@",route.name);
+            SKLog(@"导航怎么走,提示信息---%@",route.advisoryNotices);
+            SKLog(@"导航怎么走,长度---%f",route.distance);
+            SKLog(@"导航怎么走,到下一个点的期望时间---%f",route.expectedTravelTime);
+            SKLog(@"导航怎么走,导航数据的线路模型---%@",route.polyline);
+            //添加覆盖层数据模型
+//            添加覆盖层会调用代理方法
+//            [self.mapView addOverlay:route.polyline];
+            
+            for(MKRouteStep * step in route.steps){
+                [self.mapView addOverlay:step.polyline];
+                SKLog(@"每一步该怎么走,提示---%@",step.instructions);
+                SKLog(@"每一步该怎么走,警告---%@",step.notice);
+                SKLog(@"每一步该怎么走,每一段的距离---%f",step.distance);
+            }
+        }
+    }];
+}
+
+
+
+#pragma mark - 添加大头针数据模型
+-(void)addAnnotation:(CLLocationCoordinate2D)coordinate title:(NSString *)title subtitle:(NSString *)subtitle{
+    //    添加大头针数据模型
+//    自定义大头针数据模型，只要遵守<MKAnnotation>协议都可以
+        SKAnnotation *ann = [[SKAnnotation alloc]init];
+        [ann setCoordinate:coordinate];
+        ann.title = title;
+        ann.subtitle = subtitle;
+        [self.mapView addAnnotation:ann];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    //移除所有大头针
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    //获取当前点击的位置的经纬度
+    UITouch * touche = [touches anyObject];
+//    CGRectContainsPoint
+    CLLocationCoordinate2D coordinate = [self.mapView convertPoint:[touche locationInView:self.mapView] toCoordinateFromView:self.mapView];
+    
+    
+    [self addAnnotation:coordinate title:@"大头针数据" subtitle:@"大头针数据"];
+}
+
+
 #pragma mark - MKMapViewDelegate
+
+/// 添加覆盖层会调用代理方法,差找对应的覆盖层视图渲染涂层
+/// @param mapView 地图
+/// @param overlay 覆盖层数据模型
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
+    MKOverlayRenderer * render = [[MKOverlayRenderer alloc]init];
+    
+    if([overlay isKindOfClass:[MKPolyline class]]){
+    //    添加线路覆盖层
+        //不同的覆盖层数据模型，对应不同的覆盖层视图来显示
+        MKPolylineRenderer *line = [[MKPolylineRenderer alloc]initWithOverlay:overlay];
+    //    设置线宽
+        line.lineWidth = 6;
+    //    设置颜色
+        line.strokeColor = SKRandomColor;
+        render = line;
+    }
+    if([overlay isKindOfClass:[MKCircle class]] ){
+    //    添加圆形区域覆盖层
+        MKCircleRenderer *circle =  [[MKCircleRenderer alloc]initWithOverlay:overlay];
+        circle.strokeColor = SKRandomColor;
+        circle.fillColor = SKRandomColor;
+        circle.alpha = 0.6;
+        render = circle;
+    }
+    return render;
+}
+
 /// 当地图更新用户位置信息时调用
 /// @param mapView 地图
 /// @param userLocation 大头针数据模型
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
-   //需要在代理viewForAnnotation中自定义图标才会显示用户信息
+//需要在代理viewForAnnotation中自定义图标才会显示用户信息
     userLocation.title = @"这是title";
     userLocation.subtitle = @"这是subtitle";
 //    SKLog(@"用户位置-%@",userLocation.location);
 //    SKLog(@"用户设备朝向-%f",userLocation.heading.magneticHeading);
-    //地图跟着用户跑，设置中心坐标,不会自动放大
+//    //地图跟着用户跑，设置中心坐标,不会自动放大
 //    [self.mapView setCenterCoordinate:userLocation.location.coordinate animated:YES];
-    //设置地图显示区域，实现自动放大
-//MKCoordinateSpan:跨度
-    MKCoordinateRegion region = MKCoordinateRegionMake(userLocation.location.coordinate,MKCoordinateSpanMake(0.0005,0.0005));
-    [self.mapView setRegion:region animated:YES];
+//设置地图显示区域，实现自动放大
+    //MKCoordinateSpan:跨度
+//    MKCoordinateRegion region = MKCoordinateRegionMake(userLocation.location.coordinate,MKCoordinateSpanMake(0.0005,0.0005));
+//    [self.mapView setRegion:region animated:YES];
     
 }
 
@@ -169,29 +339,53 @@
 
 /// 自定义用户标识
 /// @param mapView 地图
-/// @param annotation 注释
+/// @param annotation 大头针模型
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
-    static NSString *identifier = @"imageID";
-     
-    MKAnnotationView *pin = [ mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-    if ( !pin )
-    {
-            pin = [ [ MKAnnotationView alloc ] initWithAnnotation:annotation reuseIdentifier:identifier ];
-//            随便加载了一张ICON
-//            我的icon的大小是48X48 大家可根据仔细的喜好制定自己的icon
-            pin.image = [ UIImage imageNamed:@"Profile_AddV_authen" ];
-            //在图中我们可以看到图标的上方，有个气泡弹窗里面写着当前用户的位置所在地
-            //原因是这里需要设置了True
-            pin.canShowCallout=YES;
-            //上图气泡的右侧还有一个带箭头的小按钮
-            //这个按钮就是在这里创建的，不过MOMO目前没有写按钮的响应事件喔。
-            //细心的朋友可以自己加上。
-            UIButton *btn = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            pin.rightCalloutAccessoryView=btn;
+    static NSString * const identifier = @"imageID";
+    //用户的大头针不改变
+    if(annotation == mapView.userLocation) return nil;
+    
+//    MKPinAnnotationView *pin = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+//    if (pin == nil){
+//        pin = [ [ MKPinAnnotationView alloc ] initWithAnnotation:annotation reuseIdentifier:identifier ];
+//    }
+//    //显示弹框
+//    pin.canShowCallout=YES;
+//    //设置颜色
+//    pin.pinTintColor = SKRandomColor;
+//    //设置下落动画
+//    pin.animatesDrop = YES;
+//    return pin;
+    
+    //自定义大头针：1.使用MKAnnotationView，或者自己定义的的子类
+    SKAnnotationView *pin = (SKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    
+    if (pin == nil){
+        pin = [ [ SKAnnotationView alloc ] initWithAnnotation:annotation reuseIdentifier:identifier ];
+        //设置大头针图片
+        pin.image = [ UIImage imageNamed:@"publish-review" ];
+        //设置大头针中心偏移量
+    //    pin.centerOffset = CGPointMake(10, 10);
+        //显示弹框
+        pin.canShowCallout=YES;
+        //弹框中心偏移量
+    //    pin.calloutOffset = CGPointMake(-10, 10);
+        //弹框右侧加按钮
+    //    UIButton *btn = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    //    pin.rightCalloutAccessoryView=btn;
+    //    //弹框左侧加按钮
+    //    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    //    pin.leftCalloutAccessoryView=btn2;
+    //    //弹框下部加按钮
+    //    UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    //    pin.detailCalloutAccessoryView = btn3;
+        pin.draggable = YES;//设置大头针可以拖动
     }
- 
-    pin.annotation = annotation;
- 
+    else{
+        //重要的步骤
+        pin.annotation = annotation;
+    }
+    
     return pin;
 }
 
@@ -244,7 +438,7 @@
     CLGeocoder *reversegeo = [[CLGeocoder alloc] init];
     [reversegeo reverseGeocodeLocation:locations.lastObject completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         SKLog(@"%@",error);
-        SKLog(@"反地理编码-%@",placemarks.firstObject.name);
+        SKLog(@"反地理编码-%@",placemarks.firstObject.locality);
     }];
 }
 
