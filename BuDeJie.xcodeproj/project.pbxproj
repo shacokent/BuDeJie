@@ -27,6 +27,10 @@
 		BC16403A27C3DC97001054EE /* LaunchImage-700-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC16403327C3DC97001054EE /* LaunchImage-700-568h@2x.png */; };
 		BC16403B27C3DC97001054EE /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = BC16403427C3DC97001054EE /* LaunchImage.png */; };
 		BC16403E27C499B4001054EE /* SKAdItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BC16403D27C499B4001054EE /* SKAdItem.m */; };
+		BC24871527EC4ED6005AABDF /* SKPushNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = BC24871327EC4ED6005AABDF /* SKPushNotification.m */; };
+		BC24871627EC4ED6005AABDF /* SKPushNotification.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC24871427EC4ED6005AABDF /* SKPushNotification.xib */; };
+		BC24871B27EC4F06005AABDF /* SKsensor.m in Sources */ = {isa = PBXBuildFile; fileRef = BC24871927EC4F06005AABDF /* SKsensor.m */; };
+		BC24871C27EC4F06005AABDF /* SKsensor.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC24871A27EC4F06005AABDF /* SKsensor.xib */; };
 		BC274F8B27C637A4006E9178 /* SKFriendTrendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC274F8A27C637A4006E9178 /* SKFriendTrendViewController.xib */; };
 		BC274F8F27C63C0F006E9178 /* SKLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC274F8D27C63C0F006E9178 /* SKLoginRegisterViewController.m */; };
 		BC274F9027C63C0F006E9178 /* SKLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC274F8E27C63C0F006E9178 /* SKLoginRegisterViewController.xib */; };
@@ -130,6 +134,12 @@
 		BC16403427C3DC97001054EE /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		BC16403C27C499B4001054EE /* SKAdItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKAdItem.h; sourceTree = "<group>"; };
 		BC16403D27C499B4001054EE /* SKAdItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKAdItem.m; sourceTree = "<group>"; };
+		BC24871227EC4ED6005AABDF /* SKPushNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKPushNotification.h; sourceTree = "<group>"; };
+		BC24871327EC4ED6005AABDF /* SKPushNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKPushNotification.m; sourceTree = "<group>"; };
+		BC24871427EC4ED6005AABDF /* SKPushNotification.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SKPushNotification.xib; sourceTree = "<group>"; };
+		BC24871827EC4F06005AABDF /* SKsensor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKsensor.h; sourceTree = "<group>"; };
+		BC24871927EC4F06005AABDF /* SKsensor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKsensor.m; sourceTree = "<group>"; };
+		BC24871A27EC4F06005AABDF /* SKsensor.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SKsensor.xib; sourceTree = "<group>"; };
 		BC274F8A27C637A4006E9178 /* SKFriendTrendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SKFriendTrendViewController.xib; sourceTree = "<group>"; };
 		BC274F8C27C63C0F006E9178 /* SKLoginRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKLoginRegisterViewController.h; sourceTree = "<group>"; };
 		BC274F8D27C63C0F006E9178 /* SKLoginRegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKLoginRegisterViewController.m; sourceTree = "<group>"; };
@@ -384,6 +394,26 @@
 			path = StartImage;
 			sourceTree = "<group>";
 		};
+		BC24871127EC4EAE005AABDF /* PushNotification */ = {
+			isa = PBXGroup;
+			children = (
+				BC24871227EC4ED6005AABDF /* SKPushNotification.h */,
+				BC24871327EC4ED6005AABDF /* SKPushNotification.m */,
+				BC24871427EC4ED6005AABDF /* SKPushNotification.xib */,
+			);
+			path = PushNotification;
+			sourceTree = "<group>";
+		};
+		BC24871727EC4EE7005AABDF /* Sensor */ = {
+			isa = PBXGroup;
+			children = (
+				BC24871827EC4F06005AABDF /* SKsensor.h */,
+				BC24871927EC4F06005AABDF /* SKsensor.m */,
+				BC24871A27EC4F06005AABDF /* SKsensor.xib */,
+			);
+			path = Sensor;
+			sourceTree = "<group>";
+		};
 		BC274FB927C88D1D006E9178 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -523,6 +553,8 @@
 		BC33B3A527BF7EE300C3AA98 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BC24871727EC4EE7005AABDF /* Sensor */,
+				BC24871127EC4EAE005AABDF /* PushNotification */,
 				BC03391027E1DC50002B46FB /* locationVc */,
 				BC33B3C227BF7FD300C3AA98 /* SKPublichViewController.h */,
 				BC33B3C327BF7FD300C3AA98 /* SKPublichViewController.m */,
@@ -880,6 +912,7 @@
 				BC274FB827C7939F006E9178 /* SKWebViewController.xib in Resources */,
 				BC3BB16C27D5FA9F0087C345 /* SKTopicPictureV.xib in Resources */,
 				BCC7B8E727C4E82300767A2C /* SKSubTagCell.xib in Resources */,
+				BC24871627EC4ED6005AABDF /* SKPushNotification.xib in Resources */,
 				BC16403927C3DC97001054EE /* LaunchImage-700@2x.png in Resources */,
 				BCFDC5F527DF468600B21CD1 /* InfoPlist.strings in Resources */,
 				BC16403B27C3DC97001054EE /* LaunchImage.png in Resources */,
@@ -891,6 +924,7 @@
 				BC3BB17627D9F3DA0087C345 /* SKPublichViewController.xib in Resources */,
 				BC16403A27C3DC97001054EE /* LaunchImage-700-568h@2x.png in Resources */,
 				BCFDC63D27E0A15300B21CD1 /* SKCollectionCell.xib in Resources */,
+				BC24871C27EC4F06005AABDF /* SKsensor.xib in Resources */,
 				BC274F9527C64B40006E9178 /* SKLoginRegisterView.xib in Resources */,
 				BC3BB16227D5FA1D0087C345 /* SKTopicMovieV.xib in Resources */,
 				BC274FAA27C76139006E9178 /* SKSquareCell.xib in Resources */,
@@ -984,6 +1018,7 @@
 				BC33B3B427BF7EE400C3AA98 /* main.m in Sources */,
 				BCC7B8DD27C4DE9D00767A2C /* SKSubTagViewController.m in Sources */,
 				BCC7B8E627C4E82300767A2C /* SKSubTagCell.m in Sources */,
+				BC24871B27EC4F06005AABDF /* SKsensor.m in Sources */,
 				BCFDC61D27DF5BF600B21CD1 /* SKSoundViewController.m in Sources */,
 				BC274FB027C767E3006E9178 /* SKFootCellItem.m in Sources */,
 				BC16402227C37E06001054EE /* SKSettingViewController.m in Sources */,
@@ -994,6 +1029,7 @@
 				BC33B3C127BF7FBF00C3AA98 /* SKNewViewController.m in Sources */,
 				BC3BB16F27D7033C0087C345 /* UIImageView+SK.m in Sources */,
 				BCFDC62B27E0384C00B21CD1 /* SKMovieCell.m in Sources */,
+				BC24871527EC4ED6005AABDF /* SKPushNotification.m in Sources */,
 				BC16401527C33A25001054EE /* SKTabBar.m in Sources */,
 				BCFDC63527E0836700B21CD1 /* SKDIYRefreshHeader.m in Sources */,
 				BC274FBD27C88D37006E9178 /* SKFileTool.m in Sources */,

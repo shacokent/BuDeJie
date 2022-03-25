@@ -9,6 +9,9 @@
 #import "SKPublichViewController.h"
 #import "SKPhotoTool.h"
 #import "SKlocationVC.h"
+#import "SKPushNotification.h"
+#import "SKsensor.h"
+
 @interface SKPublichViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,CTAssetsPickerControllerDelegate>
 
 @end
@@ -135,6 +138,14 @@
     SKlocationVC *locationvc = [[SKlocationVC alloc] init];
     [self.navigationController pushViewController:locationvc animated:YES];
 }
+- (IBAction)pushNotificationOnClick:(UIButton *)sender {
+    SKPushNotification *PushNotificationVC = [[SKPushNotification alloc] init];
+    [self.navigationController pushViewController:PushNotificationVC animated:YES];
+}
 
+- (IBAction)SensorOnClick:(UIButton *)sender {
+    SKsensor *SKsensorVC = [[SKsensor alloc] init];
+    [self.navigationController pushViewController:SKsensorVC animated:YES];
+}
 
 @end
