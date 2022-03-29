@@ -87,7 +87,9 @@
     //！！重要：在AppDelegate中的didReceiveLocalNotification中监测到用户点击通知从后台进入APP或者APP就在前台时触发此方法，完全关闭软件，不会触发，需要查看didFinishLaunchingWithOptions的launchOptions，如果app不是通过正常启动（点击图标启动），都会把信息放在这个字典中
     
     
-//    二、远程推送利用deviceToken（像苹果注册远程通知时获得，是由bounldID+UUID计算生成）https://www.jianshu.com/p/ec249057fac7
+//    二、远程推送利用deviceToken（像苹果注册远程通知时获得，是由bounldID+UUID计算生成），需要创建支持远程推送的证书，并在在AppDelegate中的didFinishLaunchingWithOptions中实现，https://www.jianshu.com/p/ec249057fac7
+    
+    
     
 }
 

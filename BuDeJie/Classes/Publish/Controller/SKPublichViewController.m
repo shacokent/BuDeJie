@@ -11,6 +11,7 @@
 #import "SKlocationVC.h"
 #import "SKPushNotification.h"
 #import "SKsensor.h"
+#import "SKRecordVC.h"
 
 @interface SKPublichViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,CTAssetsPickerControllerDelegate>
 
@@ -146,6 +147,11 @@
 - (IBAction)SensorOnClick:(UIButton *)sender {
     SKsensor *SKsensorVC = [[SKsensor alloc] init];
     [self.navigationController pushViewController:SKsensorVC animated:YES];
+}
+
+- (IBAction)recordOnClick:(UIButton *)sender {
+    SKRecordVC *recordVC = [[SKRecordVC alloc] init];
+    [self.navigationController pushViewController:recordVC animated:YES];
 }
 
 @end

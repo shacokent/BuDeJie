@@ -83,9 +83,12 @@
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" title="待定" backgroundImage="loginBtnBg">
+                            <state key="normal" title="音频" backgroundImage="loginBtnBg">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="recordOnClick:" destination="-1" eventType="touchUpInside" id="1t5-Zb-Se8"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

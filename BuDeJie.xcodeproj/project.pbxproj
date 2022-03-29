@@ -75,6 +75,8 @@
 		BC3BB18627DF32270087C345 /* AppLocalString.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC3BB18827DF32270087C345 /* AppLocalString.strings */; };
 		BC3BB19627DF388F0087C345 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC3BB19827DF388F0087C345 /* LaunchScreen.storyboard */; };
 		BC7C8C2A27CCA9B0003788FD /* SKConst.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7C8C2927CCA9B0003788FD /* SKConst.m */; };
+		BC92072A27F2BC670086676C /* SKRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC92072827F2BC670086676C /* SKRecordVC.m */; };
+		BC92072B27F2BC670086676C /* SKRecordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC92072927F2BC670086676C /* SKRecordVC.xib */; };
 		BC95FB5027CF6A9B00EF8391 /* SKTopicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BC95FB4F27CF6A9B00EF8391 /* SKTopicItem.m */; };
 		BCABFF0527C91E9F00B72B44 /* SKTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BCABFF0427C91E9F00B72B44 /* SKTitleButton.m */; };
 		BCC7B8DA27C4DB4600767A2C /* UIWindow+SK.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC7B8D927C4DB4600767A2C /* UIWindow+SK.m */; };
@@ -214,6 +216,10 @@
 		BC3BB19727DF388F0087C345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC7C8C2827CCA9B0003788FD /* SKConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKConst.h; sourceTree = "<group>"; };
 		BC7C8C2927CCA9B0003788FD /* SKConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKConst.m; sourceTree = "<group>"; };
+		BC92072527F1B6C80086676C /* BuDeJie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuDeJie.entitlements; sourceTree = "<group>"; };
+		BC92072727F2BC670086676C /* SKRecordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKRecordVC.h; sourceTree = "<group>"; };
+		BC92072827F2BC670086676C /* SKRecordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKRecordVC.m; sourceTree = "<group>"; };
+		BC92072927F2BC670086676C /* SKRecordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SKRecordVC.xib; sourceTree = "<group>"; };
 		BC95FB4E27CF6A9B00EF8391 /* SKTopicItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKTopicItem.h; sourceTree = "<group>"; };
 		BC95FB4F27CF6A9B00EF8391 /* SKTopicItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKTopicItem.m; sourceTree = "<group>"; };
 		BCABFF0327C91E9F00B72B44 /* SKTitleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKTitleButton.h; sourceTree = "<group>"; };
@@ -454,6 +460,7 @@
 		BC33B37E27BF3B2F00C3AA98 /* BuDeJie */ = {
 			isa = PBXGroup;
 			children = (
+				BC92072527F1B6C80086676C /* BuDeJie.entitlements */,
 				BC33B38B27BF3B3100C3AA98 /* Assets.xcassets */,
 				BCFDC5F327DF464500B21CD1 /* Info.plist */,
 				BCFDC5EB27DF43CA00B21CD1 /* InfoPlist.strings */,
@@ -553,6 +560,7 @@
 		BC33B3A527BF7EE300C3AA98 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BC92072627F2BC4E0086676C /* Record */,
 				BC24871727EC4EE7005AABDF /* Sensor */,
 				BC24871127EC4EAE005AABDF /* PushNotification */,
 				BC03391027E1DC50002B46FB /* locationVc */,
@@ -800,6 +808,16 @@
 			path = SKAlert;
 			sourceTree = "<group>";
 		};
+		BC92072627F2BC4E0086676C /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				BC92072727F2BC670086676C /* SKRecordVC.h */,
+				BC92072827F2BC670086676C /* SKRecordVC.m */,
+				BC92072927F2BC670086676C /* SKRecordVC.xib */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
 		BCFDC60C27DF5BF600B21CD1 /* Topic */ = {
 			isa = PBXGroup;
 			children = (
@@ -919,6 +937,7 @@
 				BC33B38C27BF3B3100C3AA98 /* Assets.xcassets in Resources */,
 				BC3BB17427D887110087C345 /* SKSeeBigPictureVC.xib in Resources */,
 				BC3BB18627DF32270087C345 /* AppLocalString.strings in Resources */,
+				BC92072B27F2BC670086676C /* SKRecordVC.xib in Resources */,
 				BC16403827C3DC97001054EE /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				BC274F8B27C637A4006E9178 /* SKFriendTrendViewController.xib in Resources */,
 				BC3BB17627D9F3DA0087C345 /* SKPublichViewController.xib in Resources */,
@@ -1008,6 +1027,7 @@
 				BC3BB16527D5FA700087C345 /* SKTopicSoundV.m in Sources */,
 				BC16403E27C499B4001054EE /* SKAdItem.m in Sources */,
 				BCFDC62D27E0384C00B21CD1 /* SKTopicCell.m in Sources */,
+				BC92072A27F2BC670086676C /* SKRecordVC.m in Sources */,
 				BC33B3BB27BF7F7700C3AA98 /* SKFriendTrendViewController.m in Sources */,
 				BC274FA927C76139006E9178 /* SKSquareCell.m in Sources */,
 				BC274FA027C72A62006E9178 /* SKLoginField.m in Sources */,
@@ -1196,9 +1216,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BuDeJie/BuDeJie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M4GLT4FQZS;
+				DEVELOPMENT_TEAM = ESS4ZQSY57;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PREFIX_HEADER = BuDeJie/Classes/Other/BuDeJie.pch;
@@ -1208,6 +1229,7 @@
 				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "前后台定位";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "前台定位";
+				INFOPLIST_KEY_NSMotionUsageDescription = "计步器8.0以前调用CMStepCounter需要添加";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = photo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1221,7 +1243,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.shacokent.budejie.BuDeJie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.speechocean.mytest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1234,9 +1256,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BuDeJie/BuDeJie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M4GLT4FQZS;
+				DEVELOPMENT_TEAM = ESS4ZQSY57;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PREFIX_HEADER = BuDeJie/Classes/Other/BuDeJie.pch;
@@ -1246,6 +1269,7 @@
 				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "前后台定位";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "前台定位";
+				INFOPLIST_KEY_NSMotionUsageDescription = "计步器8.0以前调用CMStepCounter需要添加";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = photo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1259,7 +1283,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.shacokent.budejie.BuDeJie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.speechocean.mytest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = 1;
