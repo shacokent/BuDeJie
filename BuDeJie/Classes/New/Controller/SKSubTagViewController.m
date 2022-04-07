@@ -26,6 +26,7 @@ static NSString * const cid=@"cell";
 //界面即将消失
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    
     //销毁指示器SVProgressHUD
     [SVProgressHUD dismiss];
     //取消网络请求

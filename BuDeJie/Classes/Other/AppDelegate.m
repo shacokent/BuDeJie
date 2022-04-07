@@ -4,7 +4,8 @@
 #else//发布环境
     #import "SKADViewController.h"
 #endif
-
+#import "SKTabBar.h"
+#import "SKNewViewController.h"
 #import <AFNetworking/AFNetworking.h>
 #import <UserNotifications/UserNotifications.h>
 //监听tabbarbutton点击，不推荐（一种方法补充）
@@ -174,5 +175,43 @@
 //    if(point.y <= 20){
 //        SKLog(@"点击了状态栏===%@",NSStringFromCGPoint(point));
 //    }
+//}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+    SKLog(@"监测通过URL打开我们的BuDeJie APP---%@",url);
+    if([url.host isEqualToString:@"new"]){
+        //跳转history
+        UITabBarController *nav = (UITabBarController*)self.window.rootViewController;
+        for(UIView * view in nav.view.subviews){
+            if([view isKindOfClass:[SKTabBar class]]){
+                NSInteger i =0;
+                for(UIView * subview in view.subviews){
+                    if([subview isKindOfClass:NSClassFromString(@"UITabBarButton")]){
+                        if(i == 1){
+                            [((SKTabBar*)view) tabBarBtnClick:(UIControl *)subview];
+                            nav.selectedIndex = i;
+                            break;
+                        }
+                        i++;
+                    }
+                }
+            }
+        }
+        for(UIViewController * vc in nav.childViewControllers){
+            for(UIViewController * subvc in vc.childViewControllers){
+                if([subvc isKindOfClass:[SKNewViewController class]]){
+                    [((SKNewViewController*)subvc) tagClick];
+                    break;;
+                }
+            }
+        }
+
+    }
+    return YES;
+}
+//9.0过期
+//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+//    SKLog(@"监测通过URL打开我们的APP");
+//    return YES;
 //}
 @end

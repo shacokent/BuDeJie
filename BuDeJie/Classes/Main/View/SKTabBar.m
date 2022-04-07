@@ -86,6 +86,7 @@
 }
 
 -(void)tabBarBtnClick:(UIControl*)tabBarBtn{
+    SKLog(@"tabBarBtnClick");
     if(self.prevTabBarBtn == tabBarBtn){
         //发出通知，告诉外界按钮被重复点击了
         [[NSNotificationCenter defaultCenter] postNotificationName:SKTabBarButtonDidRepeatClickNSNotification object:nil];

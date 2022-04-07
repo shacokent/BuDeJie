@@ -74,6 +74,8 @@
 		BC3BB18127DB39B90087C345 /* SKAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3BB18027DB39B90087C345 /* SKAlert.m */; };
 		BC3BB18627DF32270087C345 /* AppLocalString.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC3BB18827DF32270087C345 /* AppLocalString.strings */; };
 		BC3BB19627DF388F0087C345 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC3BB19827DF388F0087C345 /* LaunchScreen.storyboard */; };
+		BC599FF127FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC599FEF27FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.m */; };
+		BC599FF227FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC599FF027FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.xib */; };
 		BC7C8C2A27CCA9B0003788FD /* SKConst.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7C8C2927CCA9B0003788FD /* SKConst.m */; };
 		BC92072A27F2BC670086676C /* SKRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC92072827F2BC670086676C /* SKRecordVC.m */; };
 		BC92072B27F2BC670086676C /* SKRecordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC92072927F2BC670086676C /* SKRecordVC.xib */; };
@@ -214,6 +216,9 @@
 		BC3BB18727DF32270087C345 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AppLocalString.strings"; sourceTree = "<group>"; };
 		BC3BB18927DF32370087C345 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AppLocalString.strings; sourceTree = "<group>"; };
 		BC3BB19727DF388F0087C345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BC599FEE27FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.h; sourceTree = "<group>"; };
+		BC599FEF27FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.m; sourceTree = "<group>"; };
+		BC599FF027FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.xib; sourceTree = "<group>"; };
 		BC7C8C2827CCA9B0003788FD /* SKConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKConst.h; sourceTree = "<group>"; };
 		BC7C8C2927CCA9B0003788FD /* SKConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKConst.m; sourceTree = "<group>"; };
 		BC92072527F1B6C80086676C /* BuDeJie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuDeJie.entitlements; sourceTree = "<group>"; };
@@ -560,6 +565,7 @@
 		BC33B3A527BF7EE300C3AA98 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BC599FED27FD897500618063 /* AppJumpOrShareOrThiithSignOrUmengOrZhifubao */,
 				BC92072627F2BC4E0086676C /* Record */,
 				BC24871727EC4EE7005AABDF /* Sensor */,
 				BC24871127EC4EAE005AABDF /* PushNotification */,
@@ -808,6 +814,16 @@
 			path = SKAlert;
 			sourceTree = "<group>";
 		};
+		BC599FED27FD897500618063 /* AppJumpOrShareOrThiithSignOrUmengOrZhifubao */ = {
+			isa = PBXGroup;
+			children = (
+				BC599FEE27FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.h */,
+				BC599FEF27FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.m */,
+				BC599FF027FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.xib */,
+			);
+			path = AppJumpOrShareOrThiithSignOrUmengOrZhifubao;
+			sourceTree = "<group>";
+		};
 		BC92072627F2BC4E0086676C /* Record */ = {
 			isa = PBXGroup;
 			children = (
@@ -931,6 +947,7 @@
 				BC3BB16C27D5FA9F0087C345 /* SKTopicPictureV.xib in Resources */,
 				BCC7B8E727C4E82300767A2C /* SKSubTagCell.xib in Resources */,
 				BC24871627EC4ED6005AABDF /* SKPushNotification.xib in Resources */,
+				BC599FF227FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.xib in Resources */,
 				BC16403927C3DC97001054EE /* LaunchImage-700@2x.png in Resources */,
 				BCFDC5F527DF468600B21CD1 /* InfoPlist.strings in Resources */,
 				BC16403B27C3DC97001054EE /* LaunchImage.png in Resources */,
@@ -1006,6 +1023,7 @@
 				BC16402927C3D47B001054EE /* SKADViewController.m in Sources */,
 				BC33B3C827BF9FB200C3AA98 /* UIImage+SK.m in Sources */,
 				BC33B3B527BF7EE400C3AA98 /* AppDelegate.m in Sources */,
+				BC599FF127FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.m in Sources */,
 				BC3BB18127DB39B90087C345 /* SKAlert.m in Sources */,
 				BCFDC61E27DF5BF600B21CD1 /* SKBaseTableVC.m in Sources */,
 				BC16401227C3344D001054EE /* SKBaseNavigationController.m in Sources */,
@@ -1148,7 +1166,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1202,7 +1220,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

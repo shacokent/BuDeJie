@@ -198,7 +198,7 @@
 
 #pragma mark - 远程音乐播放
 -(void)playRemateSound{
-    self.playerRemote = nil;
+    _playerRemote = nil;
     [self.playerRemote play];
 }
 
@@ -213,11 +213,10 @@
 
 #pragma mark - 使用AVplayerViewController播放,依赖AVKit
 -(void)playerVCRun{
-    self.avplayerVC = nil;
+    _avplayerVC = nil;
     [self presentViewController:self.avplayerVC animated:YES completion:^{
         [self.avplayerVC.player play];
     }];
 }
-
 
 @end

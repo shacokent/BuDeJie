@@ -12,6 +12,7 @@
 #import "SKPushNotification.h"
 #import "SKsensor.h"
 #import "SKRecordVC.h"
+#import "SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.h"
 
 @interface SKPublichViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,CTAssetsPickerControllerDelegate>
 
@@ -153,5 +154,11 @@
     SKRecordVC *recordVC = [[SKRecordVC alloc] init];
     [self.navigationController pushViewController:recordVC animated:YES];
 }
+
+- (IBAction)AppJuShTsUmZFBOnCick:(UIButton *)sender {
+    SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC *AppJuShTsUmZFBVC = [[SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC alloc] init];
+    [self.navigationController pushViewController:AppJuShTsUmZFBVC animated:YES];
+}
+
 
 @end
