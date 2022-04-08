@@ -31,11 +31,39 @@
                         <action selector="jumpApp:" destination="-1" eventType="touchUpInside" id="8yL-dV-qjN"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxv-MW-6Ni">
+                    <rect key="frame" x="105" y="134" width="80" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="MCX-Df-xnF"/>
+                        <constraint firstAttribute="width" constant="80" id="nIa-7E-hT6"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="常用设置界面跳转"/>
+                    <connections>
+                        <action selector="settingViewsOnClick:" destination="-1" eventType="touchUpInside" id="3Vm-lC-iDf"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXZ-XH-UuK">
+                    <rect key="frame" x="190" y="134" width="80" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="ai9-wp-j5O"/>
+                        <constraint firstAttribute="height" constant="31" id="xlL-eL-oHV"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="社交分享"/>
+                    <connections>
+                        <action selector="socialshare:" destination="-1" eventType="touchUpInside" id="khP-QB-V08"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="xXZ-XH-UuK" firstAttribute="centerY" secondItem="gxv-MW-6Ni" secondAttribute="centerY" id="M3Q-hj-0ea"/>
+                <constraint firstItem="xXZ-XH-UuK" firstAttribute="leading" secondItem="gxv-MW-6Ni" secondAttribute="trailing" constant="5" id="NAb-gf-vNz"/>
                 <constraint firstItem="e6f-NB-iQG" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="Nv7-3P-8PJ"/>
+                <constraint firstItem="gxv-MW-6Ni" firstAttribute="centerY" secondItem="e6f-NB-iQG" secondAttribute="centerY" id="T6c-Ja-cOR"/>
+                <constraint firstItem="gxv-MW-6Ni" firstAttribute="leading" secondItem="e6f-NB-iQG" secondAttribute="trailing" constant="5" id="ZPo-9o-TFj"/>
                 <constraint firstItem="e6f-NB-iQG" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="90" id="y6H-yC-6wy"/>
             </constraints>
             <point key="canvasLocation" x="-58" y="-32"/>

@@ -11,7 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SKTabBar : UITabBar
--(void)tabBarBtnClick:(UIControl*)tabBarBtn;
 @end
 
 NS_ASSUME_NONNULL_END

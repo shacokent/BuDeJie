@@ -11,7 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SKNewViewController : UIViewController
--(void)tagClick;
 @end
 
 NS_ASSUME_NONNULL_END

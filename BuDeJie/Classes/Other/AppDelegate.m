@@ -4,10 +4,9 @@
 #else//发布环境
     #import "SKADViewController.h"
 #endif
-#import "SKTabBar.h"
-#import "SKNewViewController.h"
 #import <AFNetworking/AFNetworking.h>
 #import <UserNotifications/UserNotifications.h>
+#import <objc/message.h>
 //监听tabbarbutton点击，不推荐（一种方法补充）
 //@interface AppDelegate ()<UITabBarControllerDelegate>
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
@@ -179,16 +178,21 @@
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
     SKLog(@"监测通过URL打开我们的BuDeJie APP---%@",url);
+//    URL如果等于：tiantianairecsample://history?mytest，那么url.host == history 参数url.query == mytest,被跳转的APP可以利用这个值（mytest）返回原来的APP，或者添加多个值，实现更多功能
+    SKLog(@"url.query---%@",url.query);
     if([url.host isEqualToString:@"new"]){
         //跳转history
         UITabBarController *nav = (UITabBarController*)self.window.rootViewController;
+        [nav dismissViewControllerAnimated:YES completion:nil];
         for(UIView * view in nav.view.subviews){
-            if([view isKindOfClass:[SKTabBar class]]){
+            if([view isKindOfClass:NSClassFromString(@"SKTabBar")]){
                 NSInteger i =0;
                 for(UIView * subview in view.subviews){
                     if([subview isKindOfClass:NSClassFromString(@"UITabBarButton")]){
                         if(i == 1){
-                            [((SKTabBar*)view) tabBarBtnClick:(UIControl *)subview];
+                            //不报漏sktabBar的方法，使用runtime
+                            void (* my_objc_msgSend_withView)(id,SEL,UIView*) = (void (*) (id,SEL,UIView*))objc_msgSend;//真机不能直接使用objc_msgSend，必须加上这句声明自己的objc_msgSend才能用，否则报错
+                            my_objc_msgSend_withView(view, @selector(tabBarBtnClick:),subview);
                             nav.selectedIndex = i;
                             break;
                         }
@@ -197,10 +201,14 @@
                 }
             }
         }
+        
         for(UIViewController * vc in nav.childViewControllers){
             for(UIViewController * subvc in vc.childViewControllers){
-                if([subvc isKindOfClass:[SKNewViewController class]]){
-                    [((SKNewViewController*)subvc) tagClick];
+                if([subvc isKindOfClass:NSClassFromString(@"SKNewViewController")]){
+
+                    //不报漏sktabBar的方法，使用runtime
+                    void (* my_objc_msgSend_withView)(id,SEL) = (void (*) (id,SEL))objc_msgSend;//真机不能直接使用objc_msgSend，必须加上这句声明自己的objc_msgSend才能用，否则报错
+                    my_objc_msgSend_withView(subvc, @selector(tagClick));
                     break;;
                 }
             }
