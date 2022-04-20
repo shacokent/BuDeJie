@@ -273,4 +273,8 @@
     NSLog(@"dylibTest");
     [SKTestDylibFrameWorkTool logFrameWorkTest];
 }
+
+-(void)testhebing{
+    NSLog(@"testhebing");
+}
 @end
