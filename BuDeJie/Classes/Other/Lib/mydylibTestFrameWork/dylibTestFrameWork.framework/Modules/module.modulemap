@@ -1,0 +1,6 @@
+framework module dylibTestFrameWork {
+  umbrella header "dylibTestFrameWork.h"
+
+  export *
+  module * { export * }
+}

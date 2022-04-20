@@ -74,6 +74,13 @@
 		BC3BB18127DB39B90087C345 /* SKAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3BB18027DB39B90087C345 /* SKAlert.m */; };
 		BC3BB18627DF32270087C345 /* AppLocalString.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC3BB18827DF32270087C345 /* AppLocalString.strings */; };
 		BC3BB19627DF388F0087C345 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC3BB19827DF388F0087C345 /* LaunchScreen.storyboard */; };
+		BC586B17280D750D008EACF6 /* myTestStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC586B16280D750D008EACF6 /* myTestStaticLib.a */; };
+		BC586B6C280E68D7008EACF6 /* myTestFrameWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC586B6B280E68D7008EACF6 /* myTestFrameWork.framework */; };
+		BC586B86280E714D008EACF6 /* dylibTestFrameWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC586B84280E714A008EACF6 /* dylibTestFrameWork.framework */; };
+		BC586B87280E714D008EACF6 /* dylibTestFrameWork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC586B84280E714A008EACF6 /* dylibTestFrameWork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BC586BA1280EA0DA008EACF6 /* testThisProStaticLib.m in Sources */ = {isa = PBXBuildFile; fileRef = BC586BA0280EA0DA008EACF6 /* testThisProStaticLib.m */; };
+		BC586BA2280EA0DA008EACF6 /* testThisProStaticLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BC586B9F280EA0DA008EACF6 /* testThisProStaticLib.h */; };
+		BC586BA8280EA182008EACF6 /* libtestThisProStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC586B9D280EA0DA008EACF6 /* libtestThisProStaticLib.a */; };
 		BC599FF127FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC599FEF27FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.m */; };
 		BC599FF227FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC599FF027FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.xib */; };
 		BC7C8C2A27CCA9B0003788FD /* SKConst.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7C8C2927CCA9B0003788FD /* SKConst.m */; };
@@ -104,6 +111,40 @@
 		BCFDC63C27E0A15300B21CD1 /* SKCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDC63A27E0A15300B21CD1 /* SKCollectionCell.m */; };
 		BCFDC63D27E0A15300B21CD1 /* SKCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFDC63B27E0A15300B21CD1 /* SKCollectionCell.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC586BA6280EA178008EACF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC33B37427BF3B2F00C3AA98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC586B9C280EA0DA008EACF6;
+			remoteInfo = testThisProStaticLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BC586B7B280E700D008EACF6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BC586B87280E714D008EACF6 /* dylibTestFrameWork.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC586B9B280EA0DA008EACF6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				BC586BA2280EA0DA008EACF6 /* testThisProStaticLib.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0B5C2A08F0F6C823F9D5DFA8 /* libPods-BuDeJie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BuDeJie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +257,13 @@
 		BC3BB18727DF32270087C345 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AppLocalString.strings"; sourceTree = "<group>"; };
 		BC3BB18927DF32370087C345 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AppLocalString.strings; sourceTree = "<group>"; };
 		BC3BB19727DF388F0087C345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BC586B10280D6113008EACF6 /* SKTestStaticLibraryTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTestStaticLibraryTool.h; sourceTree = "<group>"; };
+		BC586B16280D750D008EACF6 /* myTestStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = myTestStaticLib.a; sourceTree = "<group>"; };
+		BC586B6B280E68D7008EACF6 /* myTestFrameWork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = myTestFrameWork.framework; sourceTree = "<group>"; };
+		BC586B84280E714A008EACF6 /* dylibTestFrameWork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = dylibTestFrameWork.framework; sourceTree = "<group>"; };
+		BC586B9D280EA0DA008EACF6 /* libtestThisProStaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtestThisProStaticLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC586B9F280EA0DA008EACF6 /* testThisProStaticLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testThisProStaticLib.h; sourceTree = "<group>"; };
+		BC586BA0280EA0DA008EACF6 /* testThisProStaticLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testThisProStaticLib.m; sourceTree = "<group>"; };
 		BC599FEE27FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.h; sourceTree = "<group>"; };
 		BC599FEF27FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.m; sourceTree = "<group>"; };
 		BC599FF027FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.xib; sourceTree = "<group>"; };
@@ -278,7 +326,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC586BA8280EA182008EACF6 /* libtestThisProStaticLib.a in Frameworks */,
 				AD79A4A99FBB2FCD959A6E40 /* libPods-BuDeJie.a in Frameworks */,
+				BC586B6C280E68D7008EACF6 /* myTestFrameWork.framework in Frameworks */,
+				BC586B86280E714D008EACF6 /* dylibTestFrameWork.framework in Frameworks */,
+				BC586B17280D750D008EACF6 /* myTestStaticLib.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC586B9A280EA0DA008EACF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +443,9 @@
 		BC16402C27C3DC59001054EE /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				BC586B70280E6C18008EACF6 /* mydylibTestFrameWork */,
+				BC586B48280D84A5008EACF6 /* myTestStaticFrameWork */,
+				BC586B0B280D602E008EACF6 /* myTestStaticlib */,
 				BCC7B8DE27C4E1EF00767A2C /* subtag.plist */,
 				BC16402D27C3DC97001054EE /* StartImage */,
 				BC3BB18827DF32270087C345 /* AppLocalString.strings */,
@@ -448,6 +510,7 @@
 			isa = PBXGroup;
 			children = (
 				BC33B37E27BF3B2F00C3AA98 /* BuDeJie */,
+				BC586B9E280EA0DA008EACF6 /* testThisProStaticLib */,
 				BC33B37D27BF3B2F00C3AA98 /* Products */,
 				3544680C3E676E7F03322281 /* Pods */,
 				44241F386B630BBF7609A74C /* Frameworks */,
@@ -458,6 +521,7 @@
 			isa = PBXGroup;
 			children = (
 				BC33B37C27BF3B2F00C3AA98 /* BuDeJie.app */,
+				BC586B9D280EA0DA008EACF6 /* libtestThisProStaticLib.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -814,6 +878,40 @@
 			path = SKAlert;
 			sourceTree = "<group>";
 		};
+		BC586B0B280D602E008EACF6 /* myTestStaticlib */ = {
+			isa = PBXGroup;
+			children = (
+				BC586B16280D750D008EACF6 /* myTestStaticLib.a */,
+				BC586B10280D6113008EACF6 /* SKTestStaticLibraryTool.h */,
+			);
+			path = myTestStaticlib;
+			sourceTree = "<group>";
+		};
+		BC586B48280D84A5008EACF6 /* myTestStaticFrameWork */ = {
+			isa = PBXGroup;
+			children = (
+				BC586B6B280E68D7008EACF6 /* myTestFrameWork.framework */,
+			);
+			path = myTestStaticFrameWork;
+			sourceTree = "<group>";
+		};
+		BC586B70280E6C18008EACF6 /* mydylibTestFrameWork */ = {
+			isa = PBXGroup;
+			children = (
+				BC586B84280E714A008EACF6 /* dylibTestFrameWork.framework */,
+			);
+			path = mydylibTestFrameWork;
+			sourceTree = "<group>";
+		};
+		BC586B9E280EA0DA008EACF6 /* testThisProStaticLib */ = {
+			isa = PBXGroup;
+			children = (
+				BC586B9F280EA0DA008EACF6 /* testThisProStaticLib.h */,
+				BC586BA0280EA0DA008EACF6 /* testThisProStaticLib.m */,
+			);
+			path = testThisProStaticLib;
+			sourceTree = "<group>";
+		};
 		BC599FED27FD897500618063 /* AppJumpOrShareOrThiithSignOrUmengOrZhifubao */ = {
 			isa = PBXGroup;
 			children = (
@@ -882,15 +980,34 @@
 				BC33B37927BF3B2F00C3AA98 /* Frameworks */,
 				BC33B37A27BF3B2F00C3AA98 /* Resources */,
 				6544AD3373B867C9876653FA /* [CP] Copy Pods Resources */,
+				BC586B7B280E700D008EACF6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BC586BA7280EA178008EACF6 /* PBXTargetDependency */,
 			);
 			name = BuDeJie;
 			productName = BuDeJie;
 			productReference = BC33B37C27BF3B2F00C3AA98 /* BuDeJie.app */;
 			productType = "com.apple.product-type.application";
+		};
+		BC586B9C280EA0DA008EACF6 /* testThisProStaticLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC586BA3280EA0DA008EACF6 /* Build configuration list for PBXNativeTarget "testThisProStaticLib" */;
+			buildPhases = (
+				BC586B99280EA0DA008EACF6 /* Sources */,
+				BC586B9A280EA0DA008EACF6 /* Frameworks */,
+				BC586B9B280EA0DA008EACF6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = testThisProStaticLib;
+			productName = testThisProStaticLib;
+			productReference = BC586B9D280EA0DA008EACF6 /* libtestThisProStaticLib.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -905,6 +1022,9 @@
 				TargetAttributes = {
 					BC33B37B27BF3B2F00C3AA98 = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					BC586B9C280EA0DA008EACF6 = {
+						CreatedOnToolsVersion = 13.3.1;
 					};
 				};
 			};
@@ -923,6 +1043,7 @@
 			projectRoot = "";
 			targets = (
 				BC33B37B27BF3B2F00C3AA98 /* BuDeJie */,
+				BC586B9C280EA0DA008EACF6 /* testThisProStaticLib */,
 			);
 		};
 /* End PBXProject section */
@@ -1082,7 +1203,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BC586B99280EA0DA008EACF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC586BA1280EA0DA008EACF6 /* testThisProStaticLib.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC586BA7280EA178008EACF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC586B9C280EA0DA008EACF6 /* testThisProStaticLib */;
+			targetProxy = BC586BA6280EA178008EACF6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BC3BB18827DF32270087C345 /* AppLocalString.strings */ = {
@@ -1239,6 +1376,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ESS4ZQSY57;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BuDeJie/Classes/Other/Lib/myTestStaticFrameWork",
+					"$(PROJECT_DIR)/BuDeJie/Classes/Other/Lib/mydylibTestFrameWork",
+				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PREFIX_HEADER = BuDeJie/Classes/Other/BuDeJie.pch;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1260,11 +1402,16 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BuDeJie/Classes/Other/Lib/myTestStaticlib",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.speechocean.mytest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -1279,6 +1426,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ESS4ZQSY57;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BuDeJie/Classes/Other/Lib/myTestStaticFrameWork",
+					"$(PROJECT_DIR)/BuDeJie/Classes/Other/Lib/mydylibTestFrameWork",
+				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PREFIX_HEADER = BuDeJie/Classes/Other/BuDeJie.pch;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1300,11 +1452,44 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BuDeJie/Classes/Other/Lib/myTestStaticlib",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.speechocean.mytest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
+			};
+			name = Release;
+		};
+		BC586BA4280EA0DA008EACF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M4GLT4FQZS;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC586BA5280EA0DA008EACF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M4GLT4FQZS;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1325,6 +1510,15 @@
 			buildConfigurations = (
 				BC33B39627BF3B3100C3AA98 /* Debug */,
 				BC33B39727BF3B3100C3AA98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC586BA3280EA0DA008EACF6 /* Build configuration list for PBXNativeTarget "testThisProStaticLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC586BA4280EA0DA008EACF6 /* Debug */,
+				BC586BA5280EA0DA008EACF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

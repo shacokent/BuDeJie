@@ -7,6 +7,10 @@
 #import <AFNetworking/AFNetworking.h>
 #import <UserNotifications/UserNotifications.h>
 #import <objc/message.h>
+#import <UMShare/UMShare.h>
+#import <UMCommon/UMCommon.h>
+#import <UMPush/UMessage.h>
+
 //监听tabbarbutton点击，不推荐（一种方法补充）
 //@interface AppDelegate ()<UITabBarControllerDelegate>
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
@@ -60,6 +64,32 @@
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:type];
     }
     
+    //友盟分享集成
+    [UMConfigure initWithAppkey:@"624fe5850059ce2bad28b5b2" channel:@"test"];
+    // U-Share 平台设置
+    [self confitUShareSettings];
+    [self configUSharePlatforms];
+    //友盟推送集成
+//    [UMConfigure initWithAppkey:@"624fe5850059ce2bad28b5b2" channel:@"test"];
+    // Push组件基本功能配置
+    UMessageRegisterEntity* entity =[[UMessageRegisterEntity alloc] init];
+    //type是对推送的几个参数的选择，可以选择一个或者多个。默认是三个全部打开，即：声音，弹窗，角标
+        entity.types =UMessageAuthorizationOptionBadge|UMessageAuthorizationOptionSound|UMessageAuthorizationOptionAlert;
+    if (@available(iOS 10.0, *)) {
+        [UNUserNotificationCenter currentNotificationCenter].delegate=self;
+    } else {
+        // Fallback on earlier versions
+    }
+    [UMessage registerForRemoteNotificationsWithLaunchOptions:launchOptions Entity:entity completionHandler:^(BOOL granted,NSError*_Nullable error){
+        if (!error && granted) {
+            //用户点击允许
+            NSLog(@"UMessage远程推送注册成功");
+        }else{
+            //用户点击不允许
+            NSLog(@"UMessage远程推送注册失败");
+        }
+    }];
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     //    2.设置控制器
@@ -84,7 +114,6 @@
 #pragma mark - 授权申请token回调
 - (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSData  *apnsToken = [NSData dataWithData:deviceToken];
-    
     NSString *tokenString = [self getHexStringForData:apnsToken];
     NSLog(@"token获取成功 = %@", tokenString);
     
@@ -222,4 +251,84 @@
 //    SKLog(@"监测通过URL打开我们的APP");
 //    return YES;
 //}
+
+
+#pragma mark - 友盟分享
+
+-(void)confitUShareSettings
+{
+/*
+     * 打开图片水印
+     */
+//[UMSocialGlobal shareInstance].isUsingWaterMark = YES;
+
+/*
+     * 关闭强制验证https，可允许http图片分享，但需要在info.plist设置安全域名
+     <key>NSAppTransportSecurity</key>
+     <dict>
+     <key>NSAllowsArbitraryLoads</key>
+     <true/>
+     </dict>
+     */
+    //[UMSocialGlobal shareInstance].isUsingHttpsWhenShareContent = NO;
+    // 微信、QQ、微博完整版会校验合法的universalLink，不设置会在初始化平台失败
+       //配置微信Universal Link需注意 universalLinkDic的key是rawInt类型，不是枚举类型 ，即为 UMSocialPlatformType.wechatSession.rawInt
+    [UMSocialGlobal shareInstance].universalLinkDic =@{@(UMSocialPlatformType_WechatSession):@"https://umplus-sdk-download.oss-cn-shanghai.aliyuncs.com/",
+    @(UMSocialPlatformType_QQ):@"https://umplus-sdk-download.oss-cn-shanghai.aliyuncs.com/qq_conn/101830139",
+     @(UMSocialPlatformType_Sina):@"https://umplus-sdk-download.oss-cn-shanghai.aliyuncs.com/"};
+
+    //extraInitDic，企业微信增加了corpid和agentid，故在UMSocialGlobal的全局配置里面增加extraInitDic来存储额外的初始化参数。extraInitDic的key:corpId和agentId为固定值
+//    [UMSocialGlobal shareInstance].extraInitDic =@{
+//    @(UMSocialPlatformType_WechatWork):@{@"corpId":@"wwac6ffb259ff6f66a",@"agentId":@"1000002"}
+//    };
+}
+
+-(void)configUSharePlatforms{
+    /* 设置微信的appKey和appSecret */
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:@"http://mobile.umeng.com/social"];
+    /*设置小程序回调app的回调*/
+//    [[UMSocialManager defaultManager] setLauchFromPlatform:(UMSocialPlatformType_WechatSession) completion:^(id userInfoResponse,NSError*error){
+//    NSLog(@"setLauchFromPlatform:userInfoResponse:%@",userInfoResponse);
+//    }];
+
+//    /* 设置分享到QQ互联的appID，
+//         * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
+//        */
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105821097"/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
+//
+//    /* 设置新浪的appKey和appSecret */
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"3921700954"  appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
+//
+//    /* 钉钉的appKey */
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_DingDing appKey:@"dingoalmlnohc0wggfedpk" appSecret:nil redirectURL:nil];
+//
+//    /* 设置企业微信的appKey和appSecret */
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatWork appKey:@"wwauthac6ffb259ff6f66a000002" appSecret:@"EU1LRsWC5uWn6KUuYOiWUpkoH45eOA0yH-ngL8579zs" redirectURL:nil];
+//
+//    /* 设置抖音的appKey和appSecret */
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_DouYin appKey:@"awd1cemo6d0l69zp" appSecret:@"a2dce41fff214270dd4a7f60ac885491" redirectURL:nil];
+//
+//    /* 设置易信的appKey */
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_YixinSession appKey:@"yx35664bdff4db42c2b7be1e29390c1a06" appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
+//
+//
+//    /* 设置领英的appKey和appSecret */
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Linkedin appKey:@"81t5eiem37d2sc"  appSecret:@"7dgUXPLH8kA8WHMV" redirectURL:@"https://api.linkedin.com/v1/people"];
+//
+//    /* 设置Twitter的appKey和appSecret */
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Twitter appKey:@"fB5tvRpna1CKK97xZUslbxiet"  appSecret:@"YcbSvseLIwZ4hZg9YmgJPP5uWzd4zr6BpBKGZhf07zzh3oj62K" redirectURL:nil];
+//
+//    /* 设置Facebook的appKey和UrlString */
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Facebook appKey:@"506027402887373"  appSecret:nil redirectURL:@"http://www.umeng.com/social"];
+//
+//    /* 设置Pinterest的appKey */
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Pinterest appKey:@"4864546872699668063"  appSecret:nil redirectURL:nil];
+//
+//    /* dropbox的appKey */
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_DropBox appKey:@"k4pn9gdwygpy4av" appSecret:@"td28zkbyb9p49xu" redirectURL:@"https://mobile.umeng.com/social"];
+//
+//    /* vk的appkey */
+//    [[UMSocialManager defaultManager]  setPlaform:UMSocialPlatformType_VKontakte appKey:@"5786123" appSecret:nil redirectURL:nil];
+
+}
 @end

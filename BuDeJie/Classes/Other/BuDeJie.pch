@@ -59,6 +59,7 @@
     #define SKFunc NSLog(@"%s",__func__);
 #else//发布环境
     #define SKLog(...)
+    #define SKFunc
 #endif
 
 #endif

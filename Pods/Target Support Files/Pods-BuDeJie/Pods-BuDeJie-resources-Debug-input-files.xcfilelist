@@ -2,3 +2,5 @@ ${PODS_ROOT}/Target Support Files/Pods-BuDeJie/Pods-BuDeJie-resources.sh
 ${PODS_CONFIGURATION_BUILD_DIR}/CTAssetsPickerController/CTAssetsPickerController.bundle
 ${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
 ${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle
+${PODS_ROOT}/UMPush/UMPush/UMPushResource.bundle
+${PODS_ROOT}/UMShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle

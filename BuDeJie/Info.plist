@@ -9,7 +9,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>WeChat</string>
+				<string>wechat</string>
 			</array>
 		</dict>
 		<dict>
@@ -28,11 +28,21 @@
 				<string>App-Prefs</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wxdc1e388c3822c80b</string>
+			</array>
+		</dict>
 	</array>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>tiantianairecsample</string>
-		<string>WeChat</string>
+		<string>wechat</string>
+		<string>weixin</string>
+		<string>weixinULAPI</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
@@ -43,6 +53,7 @@
 	<array>
 		<string>audio</string>
 		<string>location</string>
+		<string>remote-notification</string>
 	</array>
 </dict>
 </plist>

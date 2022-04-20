@@ -19,52 +19,102 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6f-NB-iQG">
-                    <rect key="frame" x="20" y="134" width="80" height="31"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="e6f-NB-iQG">
+                    <rect key="frame" x="20" y="90" width="90" height="66"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="31" id="ghY-Et-kOa"/>
-                        <constraint firstAttribute="width" constant="80" id="kA3-re-cZg"/>
+                        <constraint firstAttribute="height" constant="66" id="ghY-Et-kOa"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="应用跳转"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="应用跳转">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                     <connections>
                         <action selector="jumpApp:" destination="-1" eventType="touchUpInside" id="8yL-dV-qjN"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxv-MW-6Ni">
-                    <rect key="frame" x="105" y="134" width="80" height="31"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="31" id="MCX-Df-xnF"/>
-                        <constraint firstAttribute="width" constant="80" id="nIa-7E-hT6"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="常用设置界面跳转"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gxv-MW-6Ni">
+                    <rect key="frame" x="115" y="90" width="89.5" height="66"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="常用设置界面跳转">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                     <connections>
                         <action selector="settingViewsOnClick:" destination="-1" eventType="touchUpInside" id="3Vm-lC-iDf"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXZ-XH-UuK">
-                    <rect key="frame" x="190" y="134" width="80" height="31"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="80" id="ai9-wp-j5O"/>
-                        <constraint firstAttribute="height" constant="31" id="xlL-eL-oHV"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="社交分享"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xXZ-XH-UuK">
+                    <rect key="frame" x="209.5" y="90" width="90" height="66"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="社交分享">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                     <connections>
                         <action selector="socialshare:" destination="-1" eventType="touchUpInside" id="khP-QB-V08"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="klM-Wc-GvN">
+                    <rect key="frame" x="304.5" y="90" width="89.5" height="66"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="第三方登录">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="signInOnClick:" destination="-1" eventType="touchUpInside" id="FYu-rb-2V4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="SBy-BS-5CW">
+                    <rect key="frame" x="20" y="164" width="90" height="66"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="静态库.a/framework">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="testStaticLib:" destination="-1" eventType="touchUpInside" id="9hf-5X-7uK"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pKG-fQ-dkW">
+                    <rect key="frame" x="115" y="164" width="89.5" height="66"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="动态库.dylib/framework">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="dylibTest:" destination="-1" eventType="touchUpInside" id="kRz-47-6Iu"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="SBy-BS-5CW" firstAttribute="width" secondItem="e6f-NB-iQG" secondAttribute="width" id="1qh-6B-3pK"/>
+                <constraint firstItem="gxv-MW-6Ni" firstAttribute="width" secondItem="e6f-NB-iQG" secondAttribute="width" id="4W9-Ss-fhs"/>
+                <constraint firstItem="klM-Wc-GvN" firstAttribute="leading" secondItem="xXZ-XH-UuK" secondAttribute="trailing" constant="5" id="Ck2-ni-Tvk"/>
+                <constraint firstAttribute="trailing" secondItem="klM-Wc-GvN" secondAttribute="trailing" constant="20" id="Kdx-Pk-urr"/>
                 <constraint firstItem="xXZ-XH-UuK" firstAttribute="centerY" secondItem="gxv-MW-6Ni" secondAttribute="centerY" id="M3Q-hj-0ea"/>
+                <constraint firstItem="pKG-fQ-dkW" firstAttribute="height" secondItem="SBy-BS-5CW" secondAttribute="height" id="Mzh-pj-eAg"/>
                 <constraint firstItem="xXZ-XH-UuK" firstAttribute="leading" secondItem="gxv-MW-6Ni" secondAttribute="trailing" constant="5" id="NAb-gf-vNz"/>
-                <constraint firstItem="e6f-NB-iQG" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="Nv7-3P-8PJ"/>
+                <constraint firstItem="pKG-fQ-dkW" firstAttribute="centerY" secondItem="SBy-BS-5CW" secondAttribute="centerY" id="PLM-M9-m7z"/>
+                <constraint firstItem="xXZ-XH-UuK" firstAttribute="height" secondItem="e6f-NB-iQG" secondAttribute="height" id="PVh-gh-c2p"/>
                 <constraint firstItem="gxv-MW-6Ni" firstAttribute="centerY" secondItem="e6f-NB-iQG" secondAttribute="centerY" id="T6c-Ja-cOR"/>
                 <constraint firstItem="gxv-MW-6Ni" firstAttribute="leading" secondItem="e6f-NB-iQG" secondAttribute="trailing" constant="5" id="ZPo-9o-TFj"/>
-                <constraint firstItem="e6f-NB-iQG" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="90" id="y6H-yC-6wy"/>
+                <constraint firstItem="e6f-NB-iQG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="90" id="ZcB-zr-WTf"/>
+                <constraint firstItem="klM-Wc-GvN" firstAttribute="width" secondItem="e6f-NB-iQG" secondAttribute="width" id="bAk-68-1us"/>
+                <constraint firstItem="klM-Wc-GvN" firstAttribute="height" secondItem="e6f-NB-iQG" secondAttribute="height" id="e4w-xD-UTU"/>
+                <constraint firstItem="SBy-BS-5CW" firstAttribute="height" secondItem="e6f-NB-iQG" secondAttribute="height" id="iIX-Bb-s8Y"/>
+                <constraint firstItem="e6f-NB-iQG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="kYe-FJ-uP3"/>
+                <constraint firstItem="pKG-fQ-dkW" firstAttribute="centerX" secondItem="gxv-MW-6Ni" secondAttribute="centerX" id="mVK-yk-Cus"/>
+                <constraint firstItem="SBy-BS-5CW" firstAttribute="top" secondItem="e6f-NB-iQG" secondAttribute="bottom" constant="8" id="oBS-RF-nQd"/>
+                <constraint firstItem="pKG-fQ-dkW" firstAttribute="width" secondItem="SBy-BS-5CW" secondAttribute="width" id="pHg-XI-PTG"/>
+                <constraint firstItem="gxv-MW-6Ni" firstAttribute="height" secondItem="e6f-NB-iQG" secondAttribute="height" id="uSz-TM-BES"/>
+                <constraint firstItem="klM-Wc-GvN" firstAttribute="centerY" secondItem="xXZ-XH-UuK" secondAttribute="centerY" id="vlr-fQ-jnk"/>
+                <constraint firstItem="SBy-BS-5CW" firstAttribute="leading" secondItem="e6f-NB-iQG" secondAttribute="leading" id="xXw-oJ-Ne3"/>
+                <constraint firstItem="xXZ-XH-UuK" firstAttribute="width" secondItem="e6f-NB-iQG" secondAttribute="width" id="yKZ-4I-bFw"/>
             </constraints>
             <point key="canvasLocation" x="-58" y="-32"/>
         </view>
@@ -72,6 +122,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
