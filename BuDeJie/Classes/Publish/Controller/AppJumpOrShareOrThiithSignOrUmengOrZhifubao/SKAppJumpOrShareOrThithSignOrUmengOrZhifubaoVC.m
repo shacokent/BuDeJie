@@ -14,8 +14,12 @@
 #import <myTestFrameWork/SKTestStaticFrameWorkTool.h>
 #import <dylibTestFrameWork/SKTestDylibFrameWorkTool.h>
 #import "testThisProStaticLib.h"
+#import <AddressBookUI/AddressBookUI.h>
+#import <AddressBook/AddressBook.h>
+#import <ContactsUI/ContactsUI.h>
+#import <Contacts/Contacts.h>
 
-@interface SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC ()
+@interface SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC ()<ABPeoplePickerNavigationControllerDelegate,CNContactPickerDelegate>
 
 @end
 
@@ -274,4 +278,125 @@
     [SKTestDylibFrameWorkTool logFrameWorkTest];
 }
 
+#pragma mark - 通讯录AddressBookUI,AddressBook,第三方RHAddressBook,IOS9.0后
+- (IBAction)addressBook:(UIButton *)sender {
+//    AddressBookUI
+//    ABPeoplePickerNavigationController * peoVC = [[ABPeoplePickerNavigationController alloc]init];
+//    peoVC.peoplePickerDelegate = self;
+//    [self presentViewController:peoVC animated:YES completion:nil];
+    
+//AddressBook,需要自己写界面，info.plist加入NSContactsUsageDescription权限
+//    ABAuthorizationStatus status = ABAddressBookGetAuthorizationStatus();
+//
+//    if(status == kABAuthorizationStatusNotDetermined){
+//        ABAddressBookRef addressBookref = ABAddressBookCreate();
+//        ABAddressBookRequestAccessWithCompletion(addressBookref, ^(bool granted, CFErrorRef error) {
+//            if(granted){
+//                SKLog(@"授权成功");
+//                CFArrayRef array = ABAddressBookCopyArrayOfAllPeople(addressBookref);
+//                for(int i=0;i<CFArrayGetCount(array);i++){
+//                    ABRecordRef person = CFArrayGetValueAtIndex(array, i);
+//                    CFStringRef firstname = ABRecordCopyValue(person, kABPersonFirstNameProperty);
+//                    SKLog(@"firstName:%@",firstname);
+//                    CFRelease(firstname);
+//                    ABMultiValueRef multeValue = ABRecordCopyValue(person,kABPersonPhoneProperty);
+//                    CFIndex count = ABMultiValueGetCount(multeValue);
+//                    for(int i =0 ;i<count;i++){
+//                        CFStringRef phonenumlab = ABMultiValueCopyLabelAtIndex(multeValue, i);
+//                        CFStringRef phonenumstr = ABMultiValueCopyValueAtIndex(multeValue, i);
+//                        SKLog(@"手机号---标签：%@ 值：%@",phonenumlab,phonenumstr);
+//                        CFRelease(phonenumlab);
+//                        CFRelease(phonenumstr);
+//                    }
+//                    CFRelease(multeValue);
+//                }
+//                CFRelease(array);
+//                CFRelease(addressBookref);
+//            }
+//            else{
+//                SKLog(@"授权失败");
+//            }
+//        });
+//    }
+//    else if(status == kABAuthorizationStatusAuthorized){
+//        SKLog(@"已授权");
+//        ABAddressBookRef addressBookref = ABAddressBookCreate();
+//        CFArrayRef array = ABAddressBookCopyArrayOfAllPeople(addressBookref);
+//        for(int i=0;i<CFArrayGetCount(array);i++){
+//            ABRecordRef person = CFArrayGetValueAtIndex(array, i);
+//            CFStringRef firstname = ABRecordCopyValue(person, kABPersonFirstNameProperty);
+//            SKLog(@"选择某一个联系人调用---firstName:%@",firstname);
+//            CFRelease(firstname);
+//            ABMultiValueRef multeValue = ABRecordCopyValue(person,kABPersonPhoneProperty);
+//            CFIndex count = ABMultiValueGetCount(multeValue);
+//            for(int i =0 ;i<count;i++){
+//                CFStringRef phonenumlab = ABMultiValueCopyLabelAtIndex(multeValue, i);
+//                CFStringRef phonenumstr = ABMultiValueCopyValueAtIndex(multeValue, i);
+//                SKLog(@"手机号---标签：%@ 值：%@",phonenumlab,phonenumstr);
+//                CFRelease(phonenumlab);
+//                CFRelease(phonenumstr);
+//            }
+//            CFRelease(multeValue);
+//        }
+//        CFRelease(array);
+//        CFRelease(addressBookref);
+//    }
+    
+    
+    //ContactsUI
+//    CNContactPickerViewController * peoCVC = [[CNContactPickerViewController alloc]init];
+//    peoCVC.delegate = self;
+//    [self presentViewController:peoCVC animated:YES completion:nil];
+    
+    //Contacts
+}
+#pragma mark - ABPeoplePickerNavigationControllerDelegate
+//- (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker{
+//    //取消
+//    SKLog(@"取消选中联系人");
+//}
+//
+//- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person{
+//    CFStringRef firstname = ABRecordCopyValue(person, kABPersonFirstNameProperty);
+//    CFStringRef lastname = ABRecordCopyValue(person, kABPersonLastNameProperty);
+//    CFStringRef middlename = ABRecordCopyValue(person, kABPersonMiddleNameProperty);
+//
+//    SKLog(@"选择某一个联系人调用---firstName:%@ middleName:%@ lastName:%@",firstname,middlename,lastname);
+//    CFRelease(firstname);
+//    CFRelease(lastname);
+//    CFRelease(middlename);
+//
+//    ABMultiValueRef multeValue = ABRecordCopyValue(person,kABPersonPhoneProperty);
+//    CFIndex count = ABMultiValueGetCount(multeValue);
+//    for(int i =0 ;i<count;i++){
+//        CFStringRef phonenumlab = ABMultiValueCopyLabelAtIndex(multeValue, i);
+//        CFStringRef phonenumstr = ABMultiValueCopyValueAtIndex(multeValue, i);
+//        SKLog(@"手机号---标签：%@ 值：%@",phonenumlab,phonenumstr);
+//        CFRelease(phonenumlab);
+//        CFRelease(phonenumstr);
+//    }
+//    CFRelease(multeValue);
+//}
+//
+//- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier{
+////    如果- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person被实现，将不会调用这个方法
+//    SKLog(@"选择某一个联系人的某个属性调用");
+//}
+#pragma mark - CNContactViewControllerDelegate
+//- (void)contactPickerDidCancel:(CNContactPickerViewController *)picker{
+//    SKLog(@"取消选中联系人");
+//}
+//
+//- (void)contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact{
+//    SKLog(@"选择某一个联系人调用--- givenName:%@ middleName:%@ familyName:%@",contact.givenName,contact.middleName,contact.familyName);
+//    for(CNLabeledValue<CNPhoneNumber*>* labeledValue in contact.phoneNumbers){
+//        CNPhoneNumber* num = labeledValue.value;
+//        SKLog(@"选择某一个联系人调用--- 标签：%@ 电话:%@",labeledValue.label,num.stringValue);
+//    }
+//}
+//
+//- (void)contactPicker:(CNContactPickerViewController *)picker didSelectContactProperty:(CNContactProperty *)contactProperty{
+//    //   如果- - (void)contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact被实现，将不会调用这个方法
+//    SKLog(@"选择某一个联系人的某个属性调用");
+//}
 @end
