@@ -349,6 +349,40 @@
 //    [self presentViewController:peoCVC animated:YES completion:nil];
     
     //Contacts
+    CNAuthorizationStatus status = [CNContactStore authorizationStatusForEntityType:CNEntityTypeContacts];
+    CNContactStore *store = [[CNContactStore alloc]init];
+    if(status == CNAuthorizationStatusNotDetermined){
+        [store requestAccessForEntityType:CNEntityTypeContacts completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                if(granted){
+                    SKLog(@"授权成功");
+                    CNContactFetchRequest * request = [[CNContactFetchRequest alloc] initWithKeysToFetch:@[CNContactGivenNameKey,CNContactMiddleNameKey,CNContactFamilyNameKey,CNContactPhoneNumbersKey]];
+                    [store enumerateContactsWithFetchRequest:request error:nil usingBlock:^(CNContact * _Nonnull contact, BOOL * _Nonnull stop) {
+                        SKLog(@"选择某一个联系人调用--- givenName:%@ middleName:%@ familyName:%@",contact.givenName,contact.middleName,contact.familyName);
+                        for(CNLabeledValue<CNPhoneNumber*>* labeledValue in contact.phoneNumbers){
+                            CNPhoneNumber* num = labeledValue.value;
+                            SKLog(@"选择某一个联系人调用--- 标签：%@ 电话:%@",labeledValue.label,num.stringValue);
+                        }
+                        *stop = YES;
+                    }];
+                    
+                }
+                else{
+                    SKLog(@"授权失败");
+                }
+        }];
+    }
+    else if(status == CNAuthorizationStatusAuthorized){
+        SKLog(@"已授权");
+        CNContactFetchRequest * request = [[CNContactFetchRequest alloc] initWithKeysToFetch:@[CNContactGivenNameKey,CNContactMiddleNameKey,CNContactFamilyNameKey,CNContactPhoneNumbersKey]];
+        [store enumerateContactsWithFetchRequest:request error:nil usingBlock:^(CNContact * _Nonnull contact, BOOL * _Nonnull stop) {
+            SKLog(@"选择某一个联系人调用--- givenName:%@ middleName:%@ familyName:%@",contact.givenName,contact.middleName,contact.familyName);
+            for(CNLabeledValue<CNPhoneNumber*>* labeledValue in contact.phoneNumbers){
+                CNPhoneNumber* num = labeledValue.value;
+                SKLog(@"选择某一个联系人调用--- 标签：%@ 电话:%@",labeledValue.label,num.stringValue);
+            }
+            *stop = YES;
+        }];
+    }
 }
 #pragma mark - ABPeoplePickerNavigationControllerDelegate
 //- (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker{
