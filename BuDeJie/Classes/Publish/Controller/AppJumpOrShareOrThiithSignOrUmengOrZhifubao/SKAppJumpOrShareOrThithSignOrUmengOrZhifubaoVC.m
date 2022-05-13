@@ -18,6 +18,9 @@
 #import <AddressBook/AddressBook.h>
 #import <ContactsUI/ContactsUI.h>
 #import <Contacts/Contacts.h>
+#import "UIDevice-Hardware.h"
+#import "SystemServices.h"
+#import "SKQRCodeController.h"
 
 @interface SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC ()<ABPeoplePickerNavigationControllerDelegate,CNContactPickerDelegate>
 
@@ -384,6 +387,7 @@
         }];
     }
 }
+
 #pragma mark - ABPeoplePickerNavigationControllerDelegate
 //- (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker{
 //    //取消
@@ -433,4 +437,21 @@
 //    //   如果- - (void)contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact被实现，将不会调用这个方法
 //    SKLog(@"选择某一个联系人的某个属性调用");
 //}
+
+#pragma mark - 获取硬件信息,UIDevice或者第三方uidevice-extension（老）或者ios-system-setvices
+- (IBAction)getPhoneInfo:(UIButton *)sender {
+    SKLog(@"获取硬件信息");
+    //uidevice-extension写了UIDevice分类
+    SKLog(@"uidevice-extension:%@",[[UIDevice currentDevice] platformString]);
+    //ios-system-setvices
+    SKLog(@"ios-system-setvices:All System Information: %@", [SystemServices sharedServices].allSystemInformation);
+}
+
+- (IBAction)QRCodeOnClick:(UIButton *)sender {
+    SKLog(@"二维码");
+    SKQRCodeController *QRCodeVC = [[SKQRCodeController alloc] init];
+    [self.navigationController pushViewController:QRCodeVC animated:YES];
+}
+
+
 @end

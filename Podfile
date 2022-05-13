@@ -3,13 +3,14 @@ target 'BuDeJie' do
   # Comment the next line if you don't want to use dynamic frameworks
 #  use_frameworks!
 #下载不了~/.cocoapods/repos搜索同名文件夹，更改源方式为git
-pod 'AFNetworking'
-pod 'MJExtension'
-pod 'SDWebImage'
-pod 'SVProgressHUD'
-pod 'CTAssetsPickerController'
-pod 'MJRefresh'
-pod 'INTULocationManager'
+pod 'AFNetworking'#网络
+pod 'MJExtension'#转模型
+pod 'SDWebImage'#网络图片下载
+pod 'SVProgressHUD'#提示框
+pod 'CTAssetsPickerController'#相册
+pod 'MJRefresh'#下拉刷新
+pod 'INTULocationManager'#定位
+pod 'SystemServices'#设备信息
 
 pod 'UMPush'#推送
 

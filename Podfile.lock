@@ -24,6 +24,7 @@ PODS:
     - SDWebImage/Core (= 5.12.3)
   - SDWebImage/Core (5.12.3)
   - SVProgressHUD (2.2.5)
+  - SystemServices (2.0.1)
   - UMCommon (7.3.6):
     - UMDevice
   - UMDevice (2.2.1)
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - MJRefresh
   - SDWebImage
   - SVProgressHUD
+  - SystemServices
   - UMCommon
   - UMDevice
   - UMPush
@@ -66,6 +68,7 @@ SPEC REPOS:
     - PureLayout
     - SDWebImage
     - SVProgressHUD
+    - SystemServices
     - UMCommon
     - UMDevice
     - UMPush
@@ -80,11 +83,12 @@ SPEC CHECKSUMS:
   PureLayout: abc0cd1780b3ca207343a4abe365f09fdcc3a571
   SDWebImage: fe429e527c8b26c41a7d2ffb00c830f689425500
   SVProgressHUD: 083f84f3f3c9d4d021a0774eb13892379660f440
+  SystemServices: 7af348493ece8951449b476c41532df72569b181
   UMCommon: c61df8457c275afd4f8a2fca10c7446d66220ac0
   UMDevice: 053478c4b4d7292f31f0a275c227d3c4007a5571
   UMPush: c420e1cf2d1c96f1257f390bc626314fb7e6d9e6
   UMShare: 84edf6d080f524d109271164ba2b07650f69d691
 
-PODFILE CHECKSUM: 5b5862b0f5bfb1b81305166204b47c00d570e3ab
+PODFILE CHECKSUM: c25455adcc221bf3032992e378ef104ebcf8aed9
 
 COCOAPODS: 1.11.2

@@ -79,14 +79,19 @@
 		BC586B86280E714D008EACF6 /* dylibTestFrameWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC586B84280E714A008EACF6 /* dylibTestFrameWork.framework */; };
 		BC586B87280E714D008EACF6 /* dylibTestFrameWork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC586B84280E714A008EACF6 /* dylibTestFrameWork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BC586BA1280EA0DA008EACF6 /* testThisProStaticLib.m in Sources */ = {isa = PBXBuildFile; fileRef = BC586BA0280EA0DA008EACF6 /* testThisProStaticLib.m */; };
-		BC586BA2280EA0DA008EACF6 /* testThisProStaticLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BC586B9F280EA0DA008EACF6 /* testThisProStaticLib.h */; };
+		BC586BA2280EA0DA008EACF6 /* testThisProStaticLib.h in Copy Files */ = {isa = PBXBuildFile; fileRef = BC586B9F280EA0DA008EACF6 /* testThisProStaticLib.h */; };
 		BC586BA8280EA182008EACF6 /* libtestThisProStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC586B9D280EA0DA008EACF6 /* libtestThisProStaticLib.a */; };
 		BC599FF127FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC599FEF27FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.m */; };
 		BC599FF227FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC599FF027FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.xib */; };
 		BC7C8C2A27CCA9B0003788FD /* SKConst.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7C8C2927CCA9B0003788FD /* SKConst.m */; };
+		BC8D515E282E4E5D00DFD8F6 /* SKQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8D515C282E4E5D00DFD8F6 /* SKQRCodeController.m */; };
+		BC8D515F282E4E5D00DFD8F6 /* SKQRCodeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8D515D282E4E5D00DFD8F6 /* SKQRCodeController.xib */; };
 		BC92072A27F2BC670086676C /* SKRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC92072827F2BC670086676C /* SKRecordVC.m */; };
 		BC92072B27F2BC670086676C /* SKRecordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC92072927F2BC670086676C /* SKRecordVC.xib */; };
 		BC95FB5027CF6A9B00EF8391 /* SKTopicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BC95FB4F27CF6A9B00EF8391 /* SKTopicItem.m */; };
+		BCA2E95128168FE5001FB9F7 /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA2E94928168FE5001FB9F7 /* UIDevice-Hardware.m */; };
+		BCA2E95328168FE5001FB9F7 /* UIDevice-Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA2E94C28168FE5001FB9F7 /* UIDevice-Reachability.m */; };
+		BCA2E95A2816923C001FB9F7 /* wwanconnect.c in Sources */ = {isa = PBXBuildFile; fileRef = BCA2E9592816923C001FB9F7 /* wwanconnect.c */; };
 		BCABFF0527C91E9F00B72B44 /* SKTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BCABFF0427C91E9F00B72B44 /* SKTitleButton.m */; };
 		BCC7B8DA27C4DB4600767A2C /* UIWindow+SK.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC7B8D927C4DB4600767A2C /* UIWindow+SK.m */; };
 		BCC7B8DD27C4DE9D00767A2C /* SKSubTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC7B8DC27C4DE9D00767A2C /* SKSubTagViewController.m */; };
@@ -134,14 +139,15 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC586B9B280EA0DA008EACF6 /* CopyFiles */ = {
+		BC586B9B280EA0DA008EACF6 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				BC586BA2280EA0DA008EACF6 /* testThisProStaticLib.h in CopyFiles */,
+				BC586BA2280EA0DA008EACF6 /* testThisProStaticLib.h in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -269,12 +275,21 @@
 		BC599FF027FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.xib; sourceTree = "<group>"; };
 		BC7C8C2827CCA9B0003788FD /* SKConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKConst.h; sourceTree = "<group>"; };
 		BC7C8C2927CCA9B0003788FD /* SKConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKConst.m; sourceTree = "<group>"; };
+		BC8D515B282E4E5D00DFD8F6 /* SKQRCodeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKQRCodeController.h; sourceTree = "<group>"; };
+		BC8D515C282E4E5D00DFD8F6 /* SKQRCodeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKQRCodeController.m; sourceTree = "<group>"; };
+		BC8D515D282E4E5D00DFD8F6 /* SKQRCodeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SKQRCodeController.xib; sourceTree = "<group>"; };
 		BC92072527F1B6C80086676C /* BuDeJie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuDeJie.entitlements; sourceTree = "<group>"; };
 		BC92072727F2BC670086676C /* SKRecordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKRecordVC.h; sourceTree = "<group>"; };
 		BC92072827F2BC670086676C /* SKRecordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKRecordVC.m; sourceTree = "<group>"; };
 		BC92072927F2BC670086676C /* SKRecordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SKRecordVC.xib; sourceTree = "<group>"; };
 		BC95FB4E27CF6A9B00EF8391 /* SKTopicItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKTopicItem.h; sourceTree = "<group>"; };
 		BC95FB4F27CF6A9B00EF8391 /* SKTopicItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKTopicItem.m; sourceTree = "<group>"; };
+		BCA2E94728168FE5001FB9F7 /* UIDevice-Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice-Reachability.h"; sourceTree = "<group>"; };
+		BCA2E94928168FE5001FB9F7 /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice-Hardware.m"; sourceTree = "<group>"; };
+		BCA2E94C28168FE5001FB9F7 /* UIDevice-Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice-Reachability.m"; sourceTree = "<group>"; };
+		BCA2E94E28168FE5001FB9F7 /* UIDevice-Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice-Hardware.h"; sourceTree = "<group>"; };
+		BCA2E9582816923C001FB9F7 /* wwanconnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wwanconnect.h; sourceTree = "<group>"; };
+		BCA2E9592816923C001FB9F7 /* wwanconnect.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wwanconnect.c; sourceTree = "<group>"; };
 		BCABFF0327C91E9F00B72B44 /* SKTitleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKTitleButton.h; sourceTree = "<group>"; };
 		BCABFF0427C91E9F00B72B44 /* SKTitleButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKTitleButton.m; sourceTree = "<group>"; };
 		BCC7B8D827C4DB4600767A2C /* UIWindow+SK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+SK.h"; sourceTree = "<group>"; };
@@ -606,6 +621,7 @@
 		BC33B3A027BF7EE300C3AA98 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				BCA2E94528168FE5001FB9F7 /* uidevice-extension */,
 				BC16402C27C3DC59001054EE /* Lib */,
 				BC33B3C527BF9F9000C3AA98 /* Category */,
 				BC33B3A127BF7EE300C3AA98 /* AppDelegate.h */,
@@ -915,11 +931,22 @@
 		BC599FED27FD897500618063 /* AppJumpOrShareOrThiithSignOrUmengOrZhifubao */ = {
 			isa = PBXGroup;
 			children = (
+				BC8D515A282E4E2200DFD8F6 /* QRCodeController */,
 				BC599FEE27FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.h */,
 				BC599FEF27FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.m */,
 				BC599FF027FD8BF100618063 /* SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC.xib */,
 			);
 			path = AppJumpOrShareOrThiithSignOrUmengOrZhifubao;
+			sourceTree = "<group>";
+		};
+		BC8D515A282E4E2200DFD8F6 /* QRCodeController */ = {
+			isa = PBXGroup;
+			children = (
+				BC8D515B282E4E5D00DFD8F6 /* SKQRCodeController.h */,
+				BC8D515C282E4E5D00DFD8F6 /* SKQRCodeController.m */,
+				BC8D515D282E4E5D00DFD8F6 /* SKQRCodeController.xib */,
+			);
+			path = QRCodeController;
 			sourceTree = "<group>";
 		};
 		BC92072627F2BC4E0086676C /* Record */ = {
@@ -930,6 +957,19 @@
 				BC92072927F2BC670086676C /* SKRecordVC.xib */,
 			);
 			path = Record;
+			sourceTree = "<group>";
+		};
+		BCA2E94528168FE5001FB9F7 /* uidevice-extension */ = {
+			isa = PBXGroup;
+			children = (
+				BCA2E9592816923C001FB9F7 /* wwanconnect.c */,
+				BCA2E9582816923C001FB9F7 /* wwanconnect.h */,
+				BCA2E94728168FE5001FB9F7 /* UIDevice-Reachability.h */,
+				BCA2E94928168FE5001FB9F7 /* UIDevice-Hardware.m */,
+				BCA2E94C28168FE5001FB9F7 /* UIDevice-Reachability.m */,
+				BCA2E94E28168FE5001FB9F7 /* UIDevice-Hardware.h */,
+			);
+			path = "uidevice-extension";
 			sourceTree = "<group>";
 		};
 		BCFDC60C27DF5BF600B21CD1 /* Topic */ = {
@@ -998,7 +1038,7 @@
 			buildPhases = (
 				BC586B99280EA0DA008EACF6 /* Sources */,
 				BC586B9A280EA0DA008EACF6 /* Frameworks */,
-				BC586B9B280EA0DA008EACF6 /* CopyFiles */,
+				BC586B9B280EA0DA008EACF6 /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -1078,6 +1118,7 @@
 				BC92072B27F2BC670086676C /* SKRecordVC.xib in Resources */,
 				BC16403827C3DC97001054EE /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				BC274F8B27C637A4006E9178 /* SKFriendTrendViewController.xib in Resources */,
+				BC8D515F282E4E5D00DFD8F6 /* SKQRCodeController.xib in Resources */,
 				BC3BB17627D9F3DA0087C345 /* SKPublichViewController.xib in Resources */,
 				BC16403A27C3DC97001054EE /* LaunchImage-700-568h@2x.png in Resources */,
 				BCFDC63D27E0A15300B21CD1 /* SKCollectionCell.xib in Resources */,
@@ -1140,6 +1181,7 @@
 			files = (
 				BC95FB5027CF6A9B00EF8391 /* SKTopicItem.m in Sources */,
 				BC33B3B827BF7F5900C3AA98 /* SKEssenceViewController.m in Sources */,
+				BCA2E95328168FE5001FB9F7 /* UIDevice-Reachability.m in Sources */,
 				BC3BB15727D1F8A30087C345 /* SKRootBaseCell.m in Sources */,
 				BC16402927C3D47B001054EE /* SKADViewController.m in Sources */,
 				BC33B3C827BF9FB200C3AA98 /* UIImage+SK.m in Sources */,
@@ -1180,10 +1222,12 @@
 				BC24871B27EC4F06005AABDF /* SKsensor.m in Sources */,
 				BCFDC61D27DF5BF600B21CD1 /* SKSoundViewController.m in Sources */,
 				BC274FB027C767E3006E9178 /* SKFootCellItem.m in Sources */,
+				BC8D515E282E4E5D00DFD8F6 /* SKQRCodeController.m in Sources */,
 				BC16402227C37E06001054EE /* SKSettingViewController.m in Sources */,
 				BC33B3C427BF7FD300C3AA98 /* SKPublichViewController.m in Sources */,
 				BCFDC61927DF5BF600B21CD1 /* SKMovieViewController.m in Sources */,
 				BC16401B27C36E94001054EE /* UIBarButtonItem+SKBarButtonItem.m in Sources */,
+				BCA2E95A2816923C001FB9F7 /* wwanconnect.c in Sources */,
 				BC3BB17327D887110087C345 /* SKSeeBigPictureVC.m in Sources */,
 				BC33B3C127BF7FBF00C3AA98 /* SKNewViewController.m in Sources */,
 				BC3BB16F27D7033C0087C345 /* UIImageView+SK.m in Sources */,
@@ -1192,6 +1236,7 @@
 				BC16401527C33A25001054EE /* SKTabBar.m in Sources */,
 				BCFDC63527E0836700B21CD1 /* SKDIYRefreshHeader.m in Sources */,
 				BC274FBD27C88D37006E9178 /* SKFileTool.m in Sources */,
+				BCA2E95128168FE5001FB9F7 /* UIDevice-Hardware.m in Sources */,
 				BC274F9D27C69381006E9178 /* SKFastButton.m in Sources */,
 				BCFDC61C27DF5BF600B21CD1 /* SKTopicViewController.m in Sources */,
 				BC3BB16827D5FA860087C345 /* SKTopicPictureV.m in Sources */,

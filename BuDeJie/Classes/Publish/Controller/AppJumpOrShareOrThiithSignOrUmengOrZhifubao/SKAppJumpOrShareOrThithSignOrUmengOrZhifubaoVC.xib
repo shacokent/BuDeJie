@@ -99,26 +99,57 @@
                         <action selector="addressBook:" destination="-1" eventType="touchUpInside" id="V2L-4S-iLL"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xng-Yw-SE2">
+                    <rect key="frame" x="304.5" y="164" width="89.5" height="66"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="获取硬件信息">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="getPhoneInfo:" destination="-1" eventType="touchUpInside" id="DW0-j4-eFM"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="171-OW-O4q">
+                    <rect key="frame" x="20" y="238" width="90" height="66"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="QR code">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="QRCodeOnClick:" destination="-1" eventType="touchUpInside" id="Umh-gj-FPy"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="SBy-BS-5CW" firstAttribute="width" secondItem="e6f-NB-iQG" secondAttribute="width" id="1qh-6B-3pK"/>
                 <constraint firstItem="gxv-MW-6Ni" firstAttribute="width" secondItem="e6f-NB-iQG" secondAttribute="width" id="4W9-Ss-fhs"/>
+                <constraint firstItem="xng-Yw-SE2" firstAttribute="centerY" secondItem="Sol-SM-uqb" secondAttribute="centerY" id="6Bo-6C-EmL"/>
+                <constraint firstItem="171-OW-O4q" firstAttribute="leading" secondItem="SBy-BS-5CW" secondAttribute="leading" id="7kY-o9-p3F"/>
                 <constraint firstItem="Sol-SM-uqb" firstAttribute="centerY" secondItem="pKG-fQ-dkW" secondAttribute="centerY" id="94u-WA-i07"/>
+                <constraint firstItem="xng-Yw-SE2" firstAttribute="centerX" secondItem="klM-Wc-GvN" secondAttribute="centerX" id="AKo-nT-U4L"/>
+                <constraint firstItem="171-OW-O4q" firstAttribute="width" secondItem="SBy-BS-5CW" secondAttribute="width" id="Aqa-bS-9ZM"/>
+                <constraint firstItem="xng-Yw-SE2" firstAttribute="height" secondItem="Sol-SM-uqb" secondAttribute="height" id="CdK-Qp-MDw"/>
                 <constraint firstItem="klM-Wc-GvN" firstAttribute="leading" secondItem="xXZ-XH-UuK" secondAttribute="trailing" constant="5" id="Ck2-ni-Tvk"/>
+                <constraint firstItem="xng-Yw-SE2" firstAttribute="width" secondItem="Sol-SM-uqb" secondAttribute="width" id="Cmq-Gu-Ki4"/>
                 <constraint firstItem="Sol-SM-uqb" firstAttribute="height" secondItem="pKG-fQ-dkW" secondAttribute="height" id="Ink-IO-B1Q"/>
                 <constraint firstAttribute="trailing" secondItem="klM-Wc-GvN" secondAttribute="trailing" constant="20" id="Kdx-Pk-urr"/>
                 <constraint firstItem="xXZ-XH-UuK" firstAttribute="centerY" secondItem="gxv-MW-6Ni" secondAttribute="centerY" id="M3Q-hj-0ea"/>
                 <constraint firstItem="pKG-fQ-dkW" firstAttribute="height" secondItem="SBy-BS-5CW" secondAttribute="height" id="Mzh-pj-eAg"/>
                 <constraint firstItem="xXZ-XH-UuK" firstAttribute="leading" secondItem="gxv-MW-6Ni" secondAttribute="trailing" constant="5" id="NAb-gf-vNz"/>
+                <constraint firstItem="171-OW-O4q" firstAttribute="height" secondItem="SBy-BS-5CW" secondAttribute="height" id="NrB-pf-yCs"/>
                 <constraint firstItem="pKG-fQ-dkW" firstAttribute="centerY" secondItem="SBy-BS-5CW" secondAttribute="centerY" id="PLM-M9-m7z"/>
                 <constraint firstItem="xXZ-XH-UuK" firstAttribute="height" secondItem="e6f-NB-iQG" secondAttribute="height" id="PVh-gh-c2p"/>
                 <constraint firstItem="gxv-MW-6Ni" firstAttribute="centerY" secondItem="e6f-NB-iQG" secondAttribute="centerY" id="T6c-Ja-cOR"/>
+                <constraint firstItem="171-OW-O4q" firstAttribute="centerX" secondItem="SBy-BS-5CW" secondAttribute="centerX" id="UXq-9T-Wor"/>
                 <constraint firstItem="gxv-MW-6Ni" firstAttribute="leading" secondItem="e6f-NB-iQG" secondAttribute="trailing" constant="5" id="ZPo-9o-TFj"/>
                 <constraint firstItem="Sol-SM-uqb" firstAttribute="width" secondItem="pKG-fQ-dkW" secondAttribute="width" id="ZU9-0H-f69"/>
                 <constraint firstItem="e6f-NB-iQG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="90" id="ZcB-zr-WTf"/>
                 <constraint firstItem="klM-Wc-GvN" firstAttribute="width" secondItem="e6f-NB-iQG" secondAttribute="width" id="bAk-68-1us"/>
+                <constraint firstItem="171-OW-O4q" firstAttribute="top" secondItem="SBy-BS-5CW" secondAttribute="bottom" constant="8" id="dKl-KM-0Ls"/>
                 <constraint firstItem="klM-Wc-GvN" firstAttribute="height" secondItem="e6f-NB-iQG" secondAttribute="height" id="e4w-xD-UTU"/>
                 <constraint firstItem="SBy-BS-5CW" firstAttribute="height" secondItem="e6f-NB-iQG" secondAttribute="height" id="iIX-Bb-s8Y"/>
                 <constraint firstItem="e6f-NB-iQG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="kYe-FJ-uP3"/>
