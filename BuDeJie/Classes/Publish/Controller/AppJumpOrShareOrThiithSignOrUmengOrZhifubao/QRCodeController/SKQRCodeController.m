@@ -8,6 +8,7 @@
 
 #import "SKQRCodeController.h"
 #import <CoreImage/CoreImage.h>
+#import "SKQRScanVC.h"
 
 @interface SKQRCodeController ()
 @property (weak, nonatomic) IBOutlet UIImageView *QRCodeIMage;
@@ -62,7 +63,8 @@
 
 #pragma mark - 扫描二维码
 - (IBAction)checkQRCode:(UIButton *)sender {
-    
+    SKQRScanVC *QrSvanVc = [[SKQRScanVC alloc]init];
+    [self.navigationController presentViewController:QrSvanVc animated:YES completion:nil];
 }
 
 #pragma mark - 识别图片二维码，暂时15.4模拟器不行，可用真机或者低版本模拟器

@@ -21,6 +21,7 @@
 #import "UIDevice-Hardware.h"
 #import "SystemServices.h"
 #import "SKQRCodeController.h"
+#import "SKSQLVC.h"
 
 @interface SKAppJumpOrShareOrThithSignOrUmengOrZhifubaoVC ()<ABPeoplePickerNavigationControllerDelegate,CNContactPickerDelegate>
 
@@ -453,5 +454,10 @@
     [self.navigationController pushViewController:QRCodeVC animated:YES];
 }
 
+- (IBAction)SQLOnClick:(UIButton *)sender {
+    SKLog(@"数据库");
+    SKSQLVC *SQLVC = [[SKSQLVC alloc] init];
+    [self.navigationController pushViewController:SQLVC animated:YES];
+}
 
 @end
