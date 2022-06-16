@@ -30,7 +30,29 @@ DML语句：增删改查
 条件语句：
     注意：!= 等于 is not ，=等于is
     删除字段名等于指定值的行：delete from 表名 where 字段名 is 指定值;
-    修改当满足条件（某字段名 > 某值 and 某字段名 != 某值 or 某字段名 < 某值）时修改制定字段名的值：update 表名 set 字段名 = 给字段赋的值 where 某字段名 > 某值 and 某字段名 != 某值 or 某字段名 < 某值
+    修改当满足条件（某字段名 > 某值 and 某字段名 != 某值 or 某字段名 < 某值）时修改制定字段名的值：update 表名 set 字段名 = 给字段赋的值 where 某字段名 > 某值 and 某字段名 != 某值 or 某字段名 < 某值;
+ 
+ 查询相关：统计、排序、limit分页
+ 统计：
+ 个数count:
+ 查询所有的：select count(*) from 表名;
+ 查询某字段不为NULL的个数：select count(字段名) from 表名;
+ 平均值avg，求和sum，最大值max，最小值min，用法同上
+ 
+ 排序:
+ ordet by
+ 按着某字段 升 / 降序排序：select *from 表名 order by 字段名 ASC/DESC;
+ 
+ 混合排序：
+ select *from 表名 order by 字段名1 ASC, 字段名2 DESC;（在字段1升序排序过程中，发现字段1有相同的值，相同的部分再按字段2降序排序）
+ 
+ 分页：
+ select *from 表名 limit 跳过跳条数, 取出条数;
+ 公式：select *from 表名 limit (n-1)*count, count;(n代表第n页)
+ 特例取前n条 select *from 表名 limit n;
+ 
+ 多表查询
+ 
  */
 @interface SKSQLVC ()
 
@@ -40,7 +62,7 @@ DML语句：增删改查
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
 }
 
 
