@@ -1,12 +1,10 @@
 //
-//  SKSQLVC.m
+//  SKSQLiteTool.h
 //  BuDeJie
 //
-//  Created by hongchen li on 2022/5/26.
+//  Created by hongchen li on 2022/6/17.
 //  Copyright © 2022 shacokent. All rights reserved.
 //
-
-#import "SKSQLVC.h"
 //数据化数据库软件navicat
 /**
 DDL语句:
@@ -52,19 +50,40 @@ DML语句：增删改查
  特例取前n条 select *from 表名 limit n;
  
  多表查询
+ select * from 表1, 表2 where 表2的某个ID名=表1.id;
+ 例如select *from t_person, t_weibo where persion_id = t_person.id;    t_weibo的persion_id与 t_person的id相关联，查询到t_person和t_weibo表persion_id等于t_person.id的数据组合返回结果（笛卡尔积）
+ 
+主键:CREATE TABLE IF NOT EXISTS "t_weibo" ("id" INTEGER NOT NULL,"title" TEXT,person_id INTEGER,PRIMARY KEY("id"));
+外键:CREATE TABLE IF NOT EXISTS "t_weibo" ("id" INTEGER NOT NULL,"title" TEXT,person_id INTEGER,PRIMARY KEY ("id"),CONSTARAINT "xxx" FPREIGN KEY ("person_id") REFERENCES "t_person" ("id"));
+ 
+ 
+ 给表起别名：例如select * from t_person as tp, t_weibo as tw where persion_id = tp.id;
+ 给字段起别名：例如select count(*) as num from t_person, t_weibo where persion_id = t_person.id;
+ 例如select tp.id as tpid, tw.id as twid,name,age from t_person as tp, t_weibo as tw where persion_id = tp.id;
+ 
+ 
+ /url/lib/libsqlite3.dylib动态库位置
+ 
+ 
  
  */
-@interface SKSQLVC ()
+#import <Foundation/Foundation.h>
+#import "Single.h"
+NS_ASSUME_NONNULL_BEGIN
 
+@interface SKSQLiteTool : NSObject
+SingleH(SKSQLiteTool)
+/// 创建表
+-(BOOL)createTable;
+/// 删除表
+-(BOOL)dropTable;
+/// 执行sql语句
+/// @param sql sql语句
+-(BOOL)exrcSql:(NSString*)sql;
+/// 绑定语句(可插入多条SQL语句)
+/// @param sql sql sql语句
+/// @param line 插入条目参数数组
+-(void)bindSql:(NSString*)sql line:(NSArray<NSArray*>*)line;
 @end
 
-@implementation SKSQLVC
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-}
-
-
-
-@end
+NS_ASSUME_NONNULL_END

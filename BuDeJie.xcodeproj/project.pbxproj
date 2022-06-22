@@ -12,6 +12,8 @@
 		BC03391827E1DCFF002B46FB /* SKlocationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC03391627E1DCFF002B46FB /* SKlocationVC.xib */; };
 		BC03393D27E46FC6002B46FB /* SKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC03393C27E46FC6002B46FB /* SKAnnotation.m */; };
 		BC03394027E831AC002B46FB /* SKAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC03393F27E831AC002B46FB /* SKAnnotationView.m */; };
+		BC0A6C8D285C6A0B00AF4545 /* SKSQLiteTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A6C8C285C6A0B00AF4545 /* SKSQLiteTool.m */; };
+		BC0A6C94285C743400AF4545 /* SKStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A6C93285C743400AF4545 /* SKStudent.m */; };
 		BC16401227C3344D001054EE /* SKBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC16401127C3344D001054EE /* SKBaseNavigationController.m */; };
 		BC16401527C33A25001054EE /* SKTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC16401427C33A25001054EE /* SKTabBar.m */; };
 		BC16401827C365F2001054EE /* UIView+SKFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BC16401727C365F2001054EE /* UIView+SKFrame.m */; };
@@ -167,6 +169,11 @@
 		BC03393C27E46FC6002B46FB /* SKAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKAnnotation.m; sourceTree = "<group>"; };
 		BC03393E27E831AC002B46FB /* SKAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKAnnotationView.h; sourceTree = "<group>"; };
 		BC03393F27E831AC002B46FB /* SKAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKAnnotationView.m; sourceTree = "<group>"; };
+		BC0A6C8B285C6A0B00AF4545 /* SKSQLiteTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKSQLiteTool.h; sourceTree = "<group>"; };
+		BC0A6C8C285C6A0B00AF4545 /* SKSQLiteTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSQLiteTool.m; sourceTree = "<group>"; };
+		BC0A6C8E285C6DF500AF4545 /* Single.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Single.h; sourceTree = "<group>"; };
+		BC0A6C92285C743400AF4545 /* SKStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKStudent.h; sourceTree = "<group>"; };
+		BC0A6C93285C743400AF4545 /* SKStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKStudent.m; sourceTree = "<group>"; };
 		BC16401027C3344D001054EE /* SKBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKBaseNavigationController.h; sourceTree = "<group>"; };
 		BC16401127C3344D001054EE /* SKBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKBaseNavigationController.m; sourceTree = "<group>"; };
 		BC16401327C33A25001054EE /* SKTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKTabBar.h; sourceTree = "<group>"; };
@@ -396,6 +403,35 @@
 			path = locationVc;
 			sourceTree = "<group>";
 		};
+		BC0A6C8A285C69E700AF4545 /* SKSQLiteTool */ = {
+			isa = PBXGroup;
+			children = (
+				BC0A6C8E285C6DF500AF4545 /* Single.h */,
+				BC0A6C8B285C6A0B00AF4545 /* SKSQLiteTool.h */,
+				BC0A6C8C285C6A0B00AF4545 /* SKSQLiteTool.m */,
+			);
+			path = SKSQLiteTool;
+			sourceTree = "<group>";
+		};
+		BC0A6C8F285C73F400AF4545 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC43C87D283F719E003DFF11 /* SKSQLVC.h */,
+				BC43C87E283F719E003DFF11 /* SKSQLVC.m */,
+				BC43C87F283F719E003DFF11 /* SKSQLVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC0A6C90285C740A00AF4545 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC0A6C92285C743400AF4545 /* SKStudent.h */,
+				BC0A6C93285C743400AF4545 /* SKStudent.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BC16401C27C37DE5001054EE /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +551,7 @@
 		BC274FB927C88D1D006E9178 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				BC0A6C8A285C69E700AF4545 /* SKSQLiteTool */,
 				BC3BB17E27DB39910087C345 /* SKAlert */,
 				BC3BB17727D9FA0E0087C345 /* Photo */,
 				BC274FBA27C88D1D006E9178 /* File */,
@@ -907,9 +944,8 @@
 		BC43C87C283F7178003DFF11 /* SQLVC */ = {
 			isa = PBXGroup;
 			children = (
-				BC43C87D283F719E003DFF11 /* SKSQLVC.h */,
-				BC43C87E283F719E003DFF11 /* SKSQLVC.m */,
-				BC43C87F283F719E003DFF11 /* SKSQLVC.xib */,
+				BC0A6C8F285C73F400AF4545 /* Controller */,
+				BC0A6C90285C740A00AF4545 /* Model */,
 			);
 			path = SQLVC;
 			sourceTree = "<group>";
@@ -1208,6 +1244,7 @@
 				BC95FB5027CF6A9B00EF8391 /* SKTopicItem.m in Sources */,
 				BC33B3B827BF7F5900C3AA98 /* SKEssenceViewController.m in Sources */,
 				BC5E925C283E1608000B431F /* SKQRScanVC.m in Sources */,
+				BC0A6C94285C743400AF4545 /* SKStudent.m in Sources */,
 				BCA2E95328168FE5001FB9F7 /* UIDevice-Reachability.m in Sources */,
 				BC3BB15727D1F8A30087C345 /* SKRootBaseCell.m in Sources */,
 				BC16402927C3D47B001054EE /* SKADViewController.m in Sources */,
@@ -1218,6 +1255,7 @@
 				BCFDC61E27DF5BF600B21CD1 /* SKBaseTableVC.m in Sources */,
 				BC16401227C3344D001054EE /* SKBaseNavigationController.m in Sources */,
 				BC03391727E1DCFF002B46FB /* SKlocationVC.m in Sources */,
+				BC0A6C8D285C6A0B00AF4545 /* SKSQLiteTool.m in Sources */,
 				BCFDC63C27E0A15300B21CD1 /* SKCollectionCell.m in Sources */,
 				BC33B3BE27BF7FA000C3AA98 /* SKMeViewController.m in Sources */,
 				BCFDC63227E07D2700B21CD1 /* SKRefreshHeader.m in Sources */,
