@@ -84,6 +84,10 @@ SingleH(SKSQLiteTool)
 /// @param sql sql sql语句
 /// @param line 插入条目参数数组
 -(void)bindSql:(NSString*)sql line:(NSArray<NSArray*>*)line;
+/// 查询全部-查询方法一
+-(NSMutableArray<NSMutableDictionary*>*)queryAll;
+/// 查询全部-查询方法二
+-(NSMutableArray<NSMutableDictionary*>*)queryAllStmt;
 @end
 
 NS_ASSUME_NONNULL_END

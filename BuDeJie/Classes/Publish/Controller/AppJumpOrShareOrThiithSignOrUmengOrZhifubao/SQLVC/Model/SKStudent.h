@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)deleteStudent:(NSString *)name;
 -(void)updateStudent:(SKStudent*)newStu;
 -(void)bindInsert:(NSArray<NSArray*>*)line;
+-(NSMutableArray<NSMutableDictionary*>*)queryAll;
+-(NSMutableArray<NSMutableDictionary*>*)queryAllStmt;
 @end
 
 NS_ASSUME_NONNULL_END

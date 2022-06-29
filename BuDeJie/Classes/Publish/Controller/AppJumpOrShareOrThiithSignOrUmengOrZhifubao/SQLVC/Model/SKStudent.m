@@ -43,4 +43,15 @@
     NSString * sql = @"insert into t_stu(name,age,score) values(?,?,?)";
     [[SKSQLiteTool shareSKSQLiteTool] bindSql:sql line:line];
 }
+
+-(NSMutableArray<NSMutableDictionary*>*)queryAll{
+    NSMutableArray<NSMutableDictionary*>* queryDict = [[SKSQLiteTool shareSKSQLiteTool] queryAll];
+    return queryDict;
+}
+
+-(NSMutableArray<NSMutableDictionary*>*)queryAllStmt{
+    NSMutableArray<NSMutableDictionary*>* queryDict = [[SKSQLiteTool shareSKSQLiteTool] queryAllStmt];
+    return queryDict;
+}
+
 @end

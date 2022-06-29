@@ -23,12 +23,30 @@
 //    [[SKSQLiteTool shareSKSQLiteTool] dropTable];
     SKStudent *stu = [[SKStudent alloc]init:@"test" age:SKRandomNum(100) score:SKRandomNum(100.0)];
     [stu insertStudent];
+    
     [SKStudent deleteStudent:@"test"];
+    
     stu.name = @"test2";
+    
     [stu insertStudent];
+    
     SKStudent *stu2 = [[SKStudent alloc]init:@"test3" age:SKRandomNum(100) score:SKRandomNum(100.0)];
+    
     [stu updateStudent:stu2];
+    
+    //补充计算时间
+    double starttime = CFAbsoluteTimeGetCurrent();
+    
     [stu bindInsert:@[@[@"test4",[NSNumber numberWithInt:SKRandomNum(100)],[NSNumber numberWithFloat:SKRandomNum(100)]],@[@"test5",[NSNumber numberWithInt:SKRandomNum(100)],[NSNumber numberWithFloat:SKRandomNum(100)]],@[@"test6",[NSNumber numberWithInt:SKRandomNum(100)],[NSNumber numberWithFloat:SKRandomNum(100)]]]];
+    
+    double endtime = CFAbsoluteTimeGetCurrent();
+    SKLog(@"耗时%f",endtime - starttime);
+    
+    NSMutableArray<NSMutableDictionary*>* queryDict = [stu queryAll];
+    SKLog(@"queryDict---%@",queryDict);
+    
+    NSMutableArray<NSMutableDictionary*>* queryDictStmt = [stu queryAllStmt];
+    SKLog(@"queryDictStmt---%@",queryDictStmt);
 }
 
 @end
